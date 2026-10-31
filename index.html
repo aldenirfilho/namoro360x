@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#34273f">
+  <meta name="description" content="Conhecer com curiosidade. Conversar com leveza. Construir vínculos com respeito. Um guia interativo para adultos, com atenção à timidez e ao TDAH.">
+  <meta name="referrer" content="no-referrer">
+  <title>Namoro360X — Boas conversas. Vínculos de verdade.</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="content.js" defer></script>
+  <script src="engine.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Namoro360X, início"><span class="brand-mark" aria-hidden="true">n<span>°</span></span><span class="brand-copy">namoro<span>360x</span><small>conexões com intenção</small></span></a>
+      <nav class="desktop-nav" id="main-nav" aria-label="Navegação principal">
+        <a href="#caminho">Seu caminho</a><a href="#atividades">O que fazer juntos</a><a href="#conversas">Como conversar</a><a href="#encontro">Criar convite</a>
+      </nav>
+      <div class="header-actions"><button class="button subtle small" id="focus-toggle" type="button" aria-pressed="false">Modo foco</button><button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">☰</button></div>
+    </div>
+  </header>
+  <main id="conteudo">
+    <section class="hero section" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+      <div class="hero-copy"><p class="eyebrow">PARA ADULTOS · NO SEU RITMO</p><h1 id="hero-title">Uma boa conversa.<br>Um novo <em>começo.</em></h1><p class="lead">Conhecer alguém pode ser mais simples quando vocês têm algo interessante para fazer juntos.</p><p>Um espaço para pessoas curiosas, respeitosas e dispostas a construir relações saudáveis. Com atenção especial a quem é tímido ou tem TDAH.</p><div class="hero-actions"><a class="button primary" href="#seu-jeito">Encontrar meu primeiro passo <span aria-hidden="true">↗</span></a><a class="button secondary" href="#atividades">Explorar atividades</a></div><p class="hero-note">Você escolhe o ritmo. Aproveite uma sugestão, adapte ou deixe para depois.</p></div>
+        <div class="hero-art" aria-hidden="true"><div class="orbit one"></div><div class="orbit two"></div><div class="orbit three"></div><div class="orbit-core">a gente<br><em>se encontra.</em><small>curiosidade + presença + respeito</small></div><span class="orbit-label label-a">uma ideia em comum</span><span class="orbit-label label-b">espaço para ser você</span><span class="orbit-label label-c">um passo possível</span></div>
+      </div>
+    </section>
+    <div class="principle-strip"><div class="container"><span class="principle-item">01 · Curiosidade para conhecer</span><span class="principle-item">02 · Honra nas atitudes</span><span class="principle-item">03 · Maturidade para respeitar</span></div></div>
+
+    <section class="section" id="seu-jeito" aria-labelledby="starting-title"><div class="container">
+      <div class="section-heading"><div><p class="eyebrow">ESCOLHA O QUE AJUDA HOJE</p><h2 id="starting-title">Um primeiro passo, do seu jeito.</h2></div><p class="muted">Combine as ideias que fizerem sentido para você. Uma escolha pequena já basta para começar a explorar.</p></div>
+      <div class="starting-grid" id="starting-grid" aria-label="Escolher um ponto de partida"></div>
+      <div class="starting-result notice" id="starting-result" hidden><div aria-live="polite"><h3 id="starting-result-title"></h3><p id="starting-result-text"></p></div><div class="starting-actions"><a class="button primary small" id="starting-primary" href="#atividades">Explorar atividades</a><a class="button secondary small" id="starting-script" href="#conversas">Ver um exemplo de conversa</a><a class="button subtle small" href="#caminho">Explorar as etapas</a></div></div>
+    </div></section>
+
+    <section class="section" id="caminho" aria-labelledby="journey-title"><div class="container">
+      <div class="section-heading"><div><p class="eyebrow">DO PRIMEIRO OLÁ AO VÍNCULO</p><h2 id="journey-title">Um caminho, várias possibilidades.</h2></div><p class="muted">Comece onde fizer sentido. Você pode voltar, pular uma etapa ou fazer uma pausa.</p></div>
+      <div class="workspace-grid"><nav class="journey-nav" id="stage-nav" aria-label="Escolher uma etapa"></nav><article class="journey-panel" id="stage-panel" aria-labelledby="stage-title"></article></div>
+      <p class="muted" id="journey-progress" aria-live="polite"></p><div class="progress-track" aria-hidden="true"><span id="progress-fill"></span></div>
+    </div></section>
+
+    <section class="section" id="atividades" aria-labelledby="activities-title"><div class="container">
+      <div class="section-heading"><div><p class="eyebrow">MENOS PRESSÃO, MAIS ASSUNTO</p><h2 id="activities-title">O que vocês podem fazer juntos?</h2></div><p class="muted">Ideias para um primeiro encontro, uma amizade que cresce ou uma relação que já começou. Confira locais, horários e acessibilidade antes de combinar.</p></div>
+      <div class="filter-row"><div class="field"><label for="activity-search">Buscar um interesse</label><input id="activity-search" type="search" placeholder="Livro, ciência, natureza…" maxlength="100"></div><div class="field"><label for="activity-category">Tipo de atividade</label><select id="activity-category"><option value="">Todos os tipos</option></select></div><div class="field"><label for="activity-energy">Energia disponível</label><select id="activity-energy"><option value="">Qualquer energia</option><option value="baixa">Mais tranquila</option><option value="media">Com movimento</option></select></div><div class="field"><label for="activity-budget">Orçamento</label><select id="activity-budget"><option value="">Todas as opções</option><option value="gratis">Sem gasto previsto</option><option value="economico">Baixo custo</option></select></div></div>
+      <div class="filter-row"><label class="check-row"><input id="only-favorites" type="checkbox"> Só minhas ideias favoritas</label><button class="button subtle small" id="reset-filters" type="button">Limpar filtros</button><button class="button secondary small" id="suggest-activity" type="button">Sugerir uma destas ideias</button><span class="muted" id="activity-count" role="status"></span></div>
+      <div class="activity-grid" id="activity-grid"></div>
+    </div></section>
+
+    <section class="section" id="conversas" aria-labelledby="conversations-title"><div class="container">
+      <div class="section-heading"><div><p class="eyebrow">POUCAS PALAVRAS, ESPAÇO PARA OS DOIS</p><h2 id="conversations-title">Você não precisa de uma fala perfeita.</h2></div><p class="muted">Use os exemplos como ponto de partida. Adapte para o seu jeito e para o vínculo que realmente existe.</p></div>
+      <div class="conversation-layout"><nav class="script-list" id="script-list" aria-label="Escolher uma situação de conversa"></nav><article class="script-preview"><p class="mini-label" id="script-context"></p><h3 id="script-title"></h3><blockquote id="script-text"></blockquote><p id="script-note"></p><button class="button primary" id="copy-script" type="button">Copiar exemplo</button><p class="copy-status" id="script-status" role="status"></p><div class="stage-tip"><strong>Uma pausa também é conversa.</strong><p>Pergunte algo → escute → comente em uma ou duas frases → dê espaço. Se você se empolgar: “Me animei com o assunto. Quero ouvir você também.”</p></div></article></div>
+      <details class="guide-card" style="margin-top:1.5rem"><summary>Quero ensaiar uma mensagem curta</summary><div class="guide-body"><label for="practice-text">Seu rascunho, somente neste aparelho</label><textarea id="practice-text" rows="4" maxlength="800" placeholder="Escreva um olá, um assunto verdadeiro e uma pergunta simples."></textarea><p id="practice-feedback" class="muted" role="status">Experimente escrever uma ideia por vez. Não existe um tamanho perfeito.</p><button class="button subtle small" type="button" id="clear-practice">Limpar rascunho</button></div></details>
+    </div></section>
+
+    <section class="section" id="encontro" aria-labelledby="planner-title"><div class="container">
+      <div class="section-heading"><div><p class="eyebrow">UM CONVITE POSSÍVEL</p><h2 id="planner-title">Uma ideia vira um encontro.</h2></div><p class="muted">Combine uma atividade, um lugar público e um tempo confortável. O convite só será enviado quando você escolher compartilhá-lo fora do site.</p></div>
+      <div class="planner-grid"><form id="invitation-form" class="planner-form">
+        <div class="field"><label for="plan-activity">O que fazer?</label><select id="plan-activity" required></select></div>
+        <div class="field"><label for="plan-place">Qual lugar público?</label><input id="plan-place" maxlength="100" placeholder="Ex.: uma cafeteria ou biblioteca" required autocomplete="off"></div>
+        <div class="field"><label for="plan-city">Cidade <span class="muted">(opcional)</span></label><input id="plan-city" maxlength="60" placeholder="Ex.: Sobral" autocomplete="off"></div>
+        <div class="filter-row"><div class="field"><label for="plan-date">Quando? <span class="muted">(opcional)</span></label><input id="plan-date" type="datetime-local" step="60"></div><div class="field"><label for="plan-duration">Tempo sugerido</label><select id="plan-duration"><option value="30">30 minutos</option><option value="45" selected>45 minutos</option><option value="60">1 hora</option><option value="90">1 hora e meia</option></select></div></div>
+        <div class="field"><label for="plan-tone">Jeito do convite</label><select id="plan-tone"><option value="leve">Leve e acolhedor</option><option value="direto">Direto e simples</option><option value="grupo">Para um pequeno grupo de adultos</option></select></div>
+        <div class="field"><label for="plan-note">Alguma combinação importante? <span class="muted">(opcional)</span></label><textarea id="plan-note" rows="2" maxlength="240" placeholder="Ex.: lugar com pouco barulho e cada um paga o seu."></textarea></div>
+        <button class="button primary" type="submit">Preparar meu convite <span aria-hidden="true">↗</span></button><p class="muted">Evite dados íntimos, endereço residencial ou informações de terceiros. O horário usa o fuso deste aparelho.</p>
+      </form><aside class="invitation-preview" aria-labelledby="invitation-title"><p class="mini-label">PRÉVIA · AINDA NÃO ENVIADO</p><h3 id="invitation-title">Um tempo bom para se conhecer.</h3><p id="invitation-empty">Escolha uma atividade e um lugar para preparar um convite com a sua cara.</p><blockquote id="invitation-text" hidden></blockquote><div id="invitation-actions" class="form-actions" hidden><button class="button primary small" id="copy-invitation" type="button">Copiar convite</button><button class="button secondary small" id="download-invitation" type="button">Baixar texto</button><button class="button subtle small" id="download-calendar" type="button">Baixar para agenda (.ics)</button></div><p id="invitation-status" class="copy-status" role="status"></p><div class="notice"><strong>Convite é escolha, dos dois lados.</strong><p>A pessoa pode recusar ou sugerir outra ideia. A concordância com um encontro não significa concordância com intimidade física.</p></div></aside></div>
+    </div></section>
+
+    <section class="section" id="guias" aria-labelledby="guides-title"><div class="container"><div class="section-heading"><div><p class="eyebrow">UM POUCO MAIS DE CUIDADO</p><h2 id="guides-title">Timidez, TDAH e a vida a dois.</h2></div><p class="muted">TDAH significa transtorno do déficit de atenção com hiperatividade. Cada pessoa tem necessidades diferentes. Estas ideias educativas podem ser adaptadas; não são tratamento.</p></div><div class="guide-grid" id="guides-grid"></div></div></section>
+
+    <section class="section" id="valores" aria-labelledby="values-title"><div class="container"><p class="eyebrow">O QUE SUSTENTA UM VÍNCULO</p><h2 id="values-title">Boas ideias. Atitudes à altura.</h2><div class="values-grid"><article class="value-item"><span class="mini-label">CURIOSIDADE</span><h3>Interessar-se de verdade.</h3><p>Gostar de aprender e fazer perguntas. Inteligência não é pontuação, diploma ou uma prova para merecer afeto.</p></article><article class="value-item"><span class="mini-label">HONRA</span><h3>Coerência nas atitudes.</h3><p>Ser honesto sobre intenções, cumprir acordos possíveis, reconhecer erros e respeitar um “não”. Ninguém ganha selo de caráter aqui.</p></article><article class="value-item"><span class="mini-label">MATURIDADE</span><h3>Dar espaço à liberdade.</h3><p>Conversar sobre necessidades e limites, aceitar diferenças e evitar aproximações românticas quando existe autoridade profissional ou dependência.</p></article></div></div></section>
+
+    <section class="section" id="comunidade" aria-labelledby="community-title"><div class="container community-band"><div><p class="eyebrow">PRIMEIRO, A CONEXÃO HUMANA</p><h2 id="community-title">A comunidade começa nos encontros.</h2><p>Leve uma ideia para um clube de leitura, uma oficina, um grupo de jogos ou uma atividade cultural aberta a adultos. Quando houver interesse recíproco, o planejador ajuda a dar o próximo passo.</p><a class="button secondary" id="group-invitation" href="#encontro">Criar um convite para meu grupo</a></div><div class="community-state"><span class="pill">VERSÃO 1.1 · GUIA INTERATIVO</span><h3>O que já funciona</h3><p>Pontos de partida escolhíveis, trilha de aproximação, ideias filtráveis, mensagens adaptáveis e convites em texto e agenda.</p><h3>A próxima etapa</h3><p>Cadastro e descoberta de participantes reais ainda não estão disponíveis. Uma futura comunidade precisará de adesão voluntária de adultos, proteção de dados, bloqueio, denúncia e moderação.</p></div></div></section>
+
+    <section class="section" id="privacidade" aria-labelledby="privacy-title"><div class="container"><div class="section-heading"><div><p class="eyebrow">VOCÊ ESCOLHE O QUE FICA</p><h2 id="privacy-title">Um espaço leve também nos dados.</h2></div><p class="muted">Sem cadastro, anúncios, análise de comportamento ou envio dos campos para um servidor nesta versão. A hospedagem pode manter registros técnicos de acesso, conforme suas políticas.</p></div><div class="notice"><label class="check-row"><input id="remember-toggle" type="checkbox"> Guardar minhas etapas, favoritas e modo foco neste navegador</label><p>Desativado por padrão. Convites e rascunhos nunca são guardados automaticamente. Em aparelhos compartilhados, prefira manter desativado. Limpar dados do navegador também apaga essas escolhas.</p><button class="button secondary small" id="clear-data" type="button">Apagar minhas escolhas e rascunhos</button><p id="storage-status" role="status" class="muted"></p></div></div></section>
+
+    <section class="section source-detail" id="fontes" aria-labelledby="sources-title"><div class="container"><p class="eyebrow">TRANSPARÊNCIA EDITORIAL</p><h2 id="sources-title">Fontes para seguir aprendendo.</h2><p>Os exemplos e a trilha são propostas editoriais do Namoro360X, sem validação como método terapêutico. As referências abaixo apoiam os cuidados gerais sobre TDAH, ansiedade social, conexão e consentimento. Consulta: 29/10/2026.</p><ul class="sources-list" id="sources-list"></ul><p class="muted">Timidez não significa necessariamente transtorno de ansiedade social. Quando há sofrimento persistente ou prejuízo importante, procure um profissional qualificado.</p></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand" href="#inicio">namoro360x</a><p>Conhecer. Compartilhar. Construir.</p><p class="muted">Um projeto de Aldenir Rocha · versão 1.1 · 30/10/2026</p></div><nav aria-label="Links de rodapé"><a href="#valores">Nossos princípios</a><a href="#privacidade">Privacidade</a><a href="#fontes">Fontes</a><a href="namoro360x.html" download>Baixar site em HTML</a><a href="https://github.com/aldenirfilho/namoro360x" target="_blank" rel="noopener noreferrer">Código no GitHub ↗</a></nav><p class="muted">Conteúdo para adultos de 18 anos ou mais. Uma relação saudável preserva a liberdade e a dignidade de todos.</p></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="copy-dialog" class="dialog-card" aria-labelledby="copy-dialog-title"><h2 id="copy-dialog-title">Copie o texto manualmente</h2><p>Seu navegador não permitiu copiar automaticamente. Selecione o texto abaixo.</p><label for="manual-copy">Texto para copiar</label><textarea id="manual-copy" rows="8" readonly></textarea><button id="close-copy" class="button primary" type="button">Fechar</button></dialog>
+  <noscript><p class="notice">Ative o JavaScript para usar as etapas, filtros e convites. Os princípios e a explicação do projeto continuam disponíveis nesta página.</p></noscript>
+</body>
+</html>
