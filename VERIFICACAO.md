@@ -1,3 +1,21 @@
+# Verificação da versão 1.2 — 31/10/2026
+
+- `npm run check`: aprovado, incluindo âncoras, referências de controles, assets, sintaxe e renderização segura do plano.
+- `npm test`: 29 testes aprovados (23 existentes e 6 novos). Cobrem validação/restauração de estado, adesão explícita, entradas corrompidas, pausa, tarefas concluídas e reversão de marcações.
+- `npm run build`: aprovado; guia e plano, cada um com uma versão HTML portátil.
+- Navegador Chromium real: cinco áreas verificadas em larguras de 1440, 390 e 320 px, sem rolagem horizontal inesperada.
+- Fluxos exercitados: progresso temporário, adesão e restauração após recarga, desativação e remoção do armazenamento, pausa, navegação por etapa, marcações, reinício com cancelar/confirmar, estado corrompido e armazenamento bloqueado.
+- Reciprocidade: respostas de recusa e aceite verificadas; não há inferência individual ou pontuação.
+- Conversas: cópia manual alternativa e download HTML verificados.
+- Guia anterior: link para o novo plano e geração de convite continuam funcionando em viewport móvel.
+- HTML portátil aberto por `file://` com rede desativada: imagem, progresso, navegação e situações funcionaram, sem requisições HTTP e sem erros JavaScript.
+- Inspeção visual: painel desktop, painel móvel, etapas móveis e reciprocidade. Capturas locais em `artifacts/` (ignoradas no Git).
+- Limites: esta rodada não substitui teste físico em iPhone/Safari. Armazenamento local não sincroniza aparelhos e depende do navegador. Links externos precisam de internet.
+
+O registro anterior abaixo é preservado como histórico da versão 1.1.
+
+---
+
 # Verificação — Namoro360X 1.1
 
 Data: 30/10/2026.

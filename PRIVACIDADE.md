@@ -1,6 +1,6 @@
-# Privacidade e dados — versão 1.0
+# Privacidade e dados — versão 1.2
 
-Atualização: 29/10/2026.
+Atualização: 31/10/2026.
 
 O Namoro360X v1 é um guia estático. Não recebe inscrições nem mantém uma base de participantes.
 
@@ -8,6 +8,9 @@ O Namoro360X v1 é um guia estático. Não recebe inscrições nem mantém uma b
 
 - Processa filtros, mensagens e convites dentro do navegador.
 - Guarda somente etapas, favoritas e modo foco se a pessoa ativar a opção correspondente. Chave: `namoro360x.preferences.v1`.
+- O plano em `plano.html` tem adesão separada, desativada por padrão: guarda apenas os IDs dos passos concluídos, etapa aberta e ritmo na chave `namoro360x.plan.v1`. Não há campos para registrar pessoas ou conversas.
+- Desativar o salvamento do plano remove sua cópia local e mantém o estado apenas na aba atual. Recomeçar exige confirmação e apaga o progresso do plano, sem modificar as escolhas do guia original.
+- Se o navegador impedir o armazenamento ou a remoção, o aplicativo informa a falha; a persistência de arquivos abertos por `file://` depende do navegador.
 - Não guarda automaticamente convites ou rascunhos, nem os inclui em links ou parâmetros de URL.
 - Permite copiar o texto e baixar arquivos por solicitação do visitante. Esses arquivos ficam no dispositivo e podem continuar existindo após limpar os dados do site.
 - Oferece exclusão das escolhas armazenadas e limpeza dos rascunhos da sessão.

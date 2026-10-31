@@ -1,5 +1,19 @@
 # Fontes e limites editoriais — Namoro360X
 
+## Atualização do plano 1.2 — 31/10/2026
+
+As quatro etapas, doze passos, sete situações e seis exemplos do plano são propostas editoriais. Não constituem escala diagnóstica, medidor de atração ou método validado de obtenção de relacionamento. O horizonte de quatro semanas e os tempos de 5 a 15 minutos são opcionais.
+
+Fontes abertas novamente em 31/10/2026 para o novo módulo:
+
+- [Tinder — Safety tips](https://policies.tinder.com/community-resources/safety-tips/intl/en/): proteção de informações, prevenção de pedidos de dinheiro e encontros em lugares públicos. A rota em português redirecionou à página inglesa. Não oferece garantia absoluta de segurança.
+- [RAINN — Consent 101](https://rainn.org/share-the-facts/consent-101-respect-boundaries-and-building-trust/): consentimento livre, específico, contínuo e reversível. Não foi usada como parecer sobre legislação brasileira.
+- [NIMH — Caring for Your Mental Health](https://www.nimh.nih.gov/health/topics/caring-for-your-mental-health): cuidado com rotina, rede de apoio e procura de avaliação profissional diante de sofrimento. O plano não fornece tratamento ou orientação farmacológica.
+
+A seção abaixo preserva o registro da consulta anterior para o conteúdo do guia original; não afirma revalidação integral dessas seis referências nesta atualização.
+
+---
+
 Versão 1.0 · Consulta em **29 de outubro de 2026**, horário de referência America/Fortaleza.
 
 ## Como o conteúdo deve ser entendido

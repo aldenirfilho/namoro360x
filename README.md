@@ -4,7 +4,17 @@
 
 Site HTML educativo e interativo para adultos de 18 anos ou mais construírem vínculos saudáveis. Acolhe diferentes estilos de comunicação, com atenção à timidez e ao transtorno do déficit de atenção com hiperatividade (TDAH).
 
-## Versão 1.1 — 30/10/2026
+## Versão 1.2 — 31/10/2026
+
+O botão **Meu plano** abre `plano.html`, um aplicativo HTML com cinco áreas: Hoje, Meu plano, Reciprocidade, Conversas e Cuidados. Inclui quatro etapas flexíveis, doze passos, sete situações de reciprocidade, seis modelos de conversa e orientações para apps, Instagram e contextos sociais/profissionais.
+
+O painel oferece uma ação por vez, ritmo de 5 ou 15 minutos e pausa. Os tempos são sugestões de organização, não metas clínicas. As marcações medem ações do próprio visitante, sem pontuar pessoas ou prometer um relacionamento. A ilustração de cafeteria foi gerada por IA e representa adultos fictícios.
+
+- Site: [Namoro360X](https://namoro360x.aldenirmed.chatgpt.site/).
+- Aplicativo: [Meu plano](https://namoro360x.aldenirmed.chatgpt.site/plano.html).
+- Acesso do site: privado para o proprietário, preservado nesta atualização. O código do repositório continua público.
+
+### Ferramentas preservadas do guia 1.1
 
 - Três pontos de partida: algo tranquilo, uma conversa curiosa ou um convite.
 - Seis etapas opcionais, sem prazo, ranking ou cobrança.
@@ -30,11 +40,11 @@ npm run preview
 
 Abra o endereço `http://127.0.0.1:4173` exibido pelo servidor. Encerre a prévia com `Ctrl+C`.
 
-Para uso offline após o build, abra `dist/namoro360x.html` diretamente no navegador. Esse arquivo reúne HTML, CSS e JavaScript; links de referências continuam exigindo internet. A cópia automática pode depender das permissões do navegador; existe seleção manual como alternativa.
+Para uso offline após o build, abra `dist/plano-relacionamento.html` para o novo plano ou `dist/namoro360x.html` para o guia original. Cada arquivo reúne seu HTML, CSS, JavaScript e imagens necessárias. Links para referências e para a outra ferramenta hospedada exigem internet. A cópia automática pode depender das permissões do navegador; existe seleção manual como alternativa. Não é necessário instalar o app, e não há service worker.
 
 ## Privacidade
 
-Os formulários não enviam conteúdo para um servidor. Por padrão, as escolhas duram apenas a sessão. Se o visitante autorizar, etapas, favoritas e modo foco são salvos em `localStorage`. Convites e rascunhos não são persistidos. O botão de exclusão limpa as escolhas e os rascunhos. O dispositivo e eventuais arquivos baixados precisam ser protegidos pelo próprio visitante.
+Os formulários não enviam conteúdo para um servidor. Por padrão, as escolhas duram apenas a sessão. Se o visitante autorizar, etapas, favoritas e modo foco do guia são salvos em `localStorage`. O plano possui uma opção independente para guardar apenas os passos concluídos, a etapa aberta e o ritmo. Convites e rascunhos não são persistidos. Cada área possui seu próprio controle de exclusão. O dispositivo e eventuais arquivos baixados precisam ser protegidos pelo próprio visitante.
 
 Consulte [PRIVACIDADE.md](PRIVACIDADE.md). A hospedagem pode manter registros técnicos, conforme suas políticas. Não há cookies de análise, pixels, rastreadores ou integração com redes sociais no código desta versão.
 

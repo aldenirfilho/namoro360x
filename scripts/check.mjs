@@ -31,3 +31,16 @@ for (const entry of content.paths) {
 }
 for (const file of ['app.js','engine.js','content.js']) new vm.Script(await read(file),{filename:file});
 console.log('Integridade aprovada: âncoras, controles, assets, sintaxe, coleções e renderização sem HTML de entrada.');
+const planHtml=await read('plano.html');
+const planIds=[...planHtml.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
+if(planIds.length!==new Set(planIds).size)throw new Error('ID duplicado no plano');
+for(const match of planHtml.matchAll(/href="#([^"]+)"/g))if(!planIds.includes(match[1]))throw new Error('Âncora ausente no plano: '+match[1]);
+for(const file of ['plano-data.js','plano-engine.js','plano.js'])new vm.Script(await read(file),{filename:file});
+const planApp=await read('plano.js');
+for(const match of planApp.matchAll(/\$\('([^']+)'\)/g))if(!planIds.includes(match[1]))throw new Error('Controle ausente no plano: '+match[1]);
+if(/innerHTML|eval\(|new Function\(/.test(planApp))throw new Error('Renderização insegura no plano');
+for(const match of planHtml.matchAll(/(?:src|href)="([^"#]+)"/g)){
+  const target=match[1];if(/^(https:|data:)/.test(target)||target==='plano-relacionamento.html')continue;
+  await access(path.join(root,target.split('#')[0]));
+}
+console.log('Plano aprovado: navegação, controles, assets e sintaxe.');
