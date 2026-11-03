@@ -3,8 +3,8 @@ import {readFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 const root = fileURLToPath(new URL('../dist/',import.meta.url));
-const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.png':'image/png'};
-const allowed = new Set(['index.html','namoro360x.html','app.js','engine.js','content.js','styles.css','favicon.svg','plano.html','plano-relacionamento.html','plano.css','plano-data.js','plano-engine.js','plano.js','assets/conversa-no-cafe.png']);
+const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.svg':'image/svg+xml','.png':'image/png','.webmanifest':'application/manifest+json; charset=utf-8'};
+const allowed = new Set(['index.html','namoro360x.html','app.js','engine.js','content.js','styles.css','favicon.svg','plano.html','plano-relacionamento.html','plano.css','plano-data.js','plano-engine.js','plano.js','assets/conversa-no-cafe.png','studio.html','studio-portatil.html','studio.css','studio-data.js','studio-engine.js','studio.js','pwa.js','sw.js','manifest.webmanifest','assets/icon-192.png','assets/icon-512.png','assets/icon-maskable.png']);
 const server = http.createServer(async (req,res) => {
   const pathname = new URL(req.url,'http://localhost').pathname;
   const name = pathname === '/' ? 'index.html' : pathname.slice(1);

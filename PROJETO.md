@@ -1,6 +1,6 @@
 # Projeto Relacionamento Sério → Namoro360X
 
-Versão: 1.1 · 30/10/2026. Evolução do guia inicial com pontos de partida escolhíveis.
+Versão: 1.3 · 03/11/2026. Guia, plano pessoal, Estúdio360X e proposta de produto digital.
 
 ## Propósito
 
@@ -23,6 +23,12 @@ Implementação: três pontos de partida escolhíveis, seis etapas, doze ativida
 Atualização 1.1: a entrada “do seu jeito” permite escolher entre uma atividade tranquila, curiosidade científica/cultural e um convite. Cada escolha oferece uma sugestão curta e ações concretas. A preferência de entrada não é salva; a pessoa pode mudar de ideia a qualquer momento. O convite para grupos já seleciona o tom adequado no planejador. Consulte ESTRATEGIA.md para as prioridades e as próximas decisões.
 
 ## Etapa 2 — Piloto comunitário voluntário (planejada)
+
+### Aplicativo 1.3 — implementado antes do piloto
+
+O plano pessoal da v1.2 é preservado. A v1.3 acrescenta um Estúdio de conversas com nove situações, 27 alternativas comentadas e três roteiros de atividade, exportáveis em TXT e imprimíveis. A interface inclui manifesto e ícones para instalação por navegadores compatíveis, além de cópia offline opcional e removível do conteúdo geral. Não há chatbot remoto nem envio das escolhas.
+
+A primeira hipótese comercial é um Kit360X digital avulso, com base gratuita e amostra aberta. R$ 29,90 é preço proposto para testar, sem vendas ou cobrança ativa. Material exclusivo, integração de pagamento, confirmação de compra, entrega e suporte dependem de uma etapa própria descrita em [MONETIZACAO.md](MONETIZACAO.md). A implementação não presume demanda nem receita.
 
 Começar por grupos reais de interesse e pequenos encontros em espaços públicos. Definir responsável por moderação, canal de acolhimento e regras claras antes da inscrição. Nenhuma raspagem de redes sociais ou adição de pessoas sem solicitação própria.
 

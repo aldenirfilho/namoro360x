@@ -1,0 +1,23 @@
+{
+  "id": "./",
+  "name": "Namoro360X — conexões com intenção",
+  "short_name": "Namoro360X",
+  "description": "Seu plano, ensaios de conversa e ideias para encontros respeitosos. Para adultos, no seu ritmo.",
+  "lang": "pt-BR",
+  "start_url": "./plano.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f5f0",
+  "theme_color": "#382b3f",
+  "prefer_related_applications": false,
+  "icons": [
+    {"src":"assets/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"assets/icon-maskable.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
+  ],
+  "shortcuts": [
+    {"name":"Meu plano","url":"./plano.html"},
+    {"name":"Ensaiar uma conversa","url":"./studio.html#ensaiar"},
+    {"name":"Escolher um encontro","url":"./studio.html#kit"}
+  ]
+}
