@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR" data-n360-shell="1.3">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#382b3f">
+  <meta name="description" content="Estúdio360X: ensaie conversas no seu ritmo, explore roteiros de encontros e prepare atividades com curiosidade, reciprocidade e respeito.">
+  <meta name="referrer" content="no-referrer">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Namoro360X">
+  <title>Estúdio360X · Namoro360X</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="studio.css">
+  <script src="studio-data.js" defer></script>
+  <script src="studio-engine.js" defer></script>
+  <script src="studio.js" defer></script>
+  <script src="pwa.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <aside class="sidebar" aria-label="Seu espaço no Namoro360X">
+    <a class="logo" href="plano.html" aria-label="Namoro360X, página de hoje"><span class="logo-symbol" aria-hidden="true">n°</span><span>namoro<strong>360x</strong><small>conexões com intenção</small></span></a>
+    <p class="nav-label">SEU ESPAÇO</p>
+    <nav class="app-nav" aria-label="Navegação do aplicativo">
+      <a href="plano.html"><span aria-hidden="true">◉</span><span>Hoje</span></a>
+      <a href="#ensaiar" aria-current="page"><span aria-hidden="true">❞</span><span>Ensaiar</span></a>
+      <a href="#kit"><span aria-hidden="true">◇</span><span>Kit360X</span></a>
+      <a href="index.html"><span aria-hidden="true">☷</span><span>Guia</span></a>
+    </nav>
+    <div class="sidebar-note"><span aria-hidden="true">✦</span><p>Uma pausa.<br>Uma boa pergunta.<br><strong>Espaço para os dois.</strong></p><small>Experimente do seu jeito.<br>Retome quando fizer sentido.</small></div>
+    <a class="sidebar-link" href="#aplicativo">Levar o app com você <span aria-hidden="true">↗</span></a>
+    <p class="sidebar-version">ESTÚDIO360X · PARA ADULTOS</p>
+  </aside>
+
+  <div class="app-shell">
+    <header class="topbar"><a class="mobile-logo" href="plano.html">namoro<strong>360x</strong></a><p class="breadcrumb">Seu espaço <span aria-hidden="true">/</span> <strong>Estúdio360X</strong></p><a class="topbar-link" href="#privacidade-estudio"><span aria-hidden="true">◌</span> Você escolhe o que fica</a></header>
+    <main id="conteudo" tabindex="-1">
+      <section class="studio-hero" aria-labelledby="studio-title">
+        <div class="hero-copy"><p class="eyebrow">ESTÚDIO360X · PRÁTICA COM LEVEZA</p><h1 id="studio-title">Conversas com presença.<br>Encontros com <em>intenção.</em></h1><p class="hero-intro">Um lugar para ensaiar uma resposta, descobrir uma atividade em comum e preparar um encontro confortável para os dois.</p><div class="actions"><a class="button primary" href="#ensaiar">Ensaiar uma situação <span aria-hidden="true">↗</span></a><a class="button outline" href="#kit">Conhecer o Kit360X</a></div><p class="hero-footnote">Atenção à timidez e ao TDAH. Você pode adaptar, fazer uma pausa ou simplesmente explorar.</p></div>
+        <div class="hero-composition" aria-hidden="true"><span class="composition-orbit orbit-one"></span><span class="composition-orbit orbit-two"></span><span class="composition-point point-one"></span><span class="composition-point point-two"></span><span class="composition-caption">EXEMPLOS PARA ADAPTAR</span><div class="conversation-bubble bubble-first"><span>uma curiosidade</span><p>“O que você gosta de fazer quando tem um tempo livre?”</p></div><div class="conversation-bubble bubble-second"><span>um espaço</span><p>Escutar também é<br>fazer parte da conversa.</p></div></div>
+      </section>
+
+      <div class="studio-facts" aria-label="O que você encontra no estúdio"><p><strong>9</strong><span>situações para ensaiar</span></p><p><strong>3</strong><span>roteiros para compartilhar</span></p><p><strong>18+</strong><span>conteúdo para adultos</span></p></div>
+
+      <section class="studio-section" id="ensaiar" aria-labelledby="rehearsal-title">
+        <div class="section-heading"><div><p class="eyebrow">UMA SITUAÇÃO POR VEZ</p><h2 id="rehearsal-title">Como você continuaria essa conversa?</h2></div><p>Escolha uma situação e experimente uma resposta. Os comentários ajudam a perceber contexto, reciprocidade e limites.</p></div>
+        <div class="scenario-layout">
+          <article class="card scenario-story"><label class="field-label" for="scenario-select">Qual situação você quer ensaiar?</label><select id="scenario-select" aria-describedby="scenario-context"></select><p class="scenario-context" id="scenario-context">Escolha uma situação para começar.</p><div class="question-mark" aria-hidden="true">❞</div><h3 id="scenario-question">Uma conversa pode começar com uma pergunta simples.</h3><p class="small-note">Cenas educativas e fictícias. Cada pessoa e cada conversa têm seu próprio contexto.</p></article>
+          <div class="scenario-practice"><p class="mini-label">ESCOLHA UM PRÓXIMO PASSO</p><div class="scenario-options" id="scenario-options" role="group" aria-label="Possíveis respostas à situação"></div><div class="scenario-feedback" id="scenario-feedback" tabindex="-1" aria-live="polite" hidden><span class="feedback-label">PARA LEVAR COM VOCÊ</span><p id="scenario-takeaway"></p><blockquote id="scenario-example"></blockquote></div><div class="scenario-bottom"><button class="button outline" id="reset-scenario" type="button">Experimentar esta situação de novo</button><p class="small-note">Sem cronômetro. Você pode pensar antes de responder.</p></div></div>
+        </div>
+      </section>
+
+      <section class="studio-section" id="kit" aria-labelledby="kit-title">
+        <div class="section-heading"><div><p class="eyebrow">KIT360X · PRÉVIA GRATUITA</p><h2 id="kit-title">Algo interessante para fazer juntos.</h2></div><p>Três roteiros adaptáveis para transformar um interesse em tempo compartilhado. Você escolhe o lugar, o ritmo e a companhia.</p></div>
+        <p class="small-note">Material educativo para adultos. Confirme local, acesso e custos. Nenhuma reserva ou mensagem é enviada pelo aplicativo.</p>
+        <div class="kit-layout">
+          <article class="card kit-main"><label class="field-label" for="kit-select">Qual roteiro combina com vocês?</label><select id="kit-select" aria-describedby="kit-summary"></select><p class="kit-summary" id="kit-summary">Escolha um roteiro para conhecer as sugestões.</p><h3 class="kit-subheading">Um jeito de aproveitar esse tempo</h3><ol class="kit-steps" id="kit-steps"></ol><div class="kit-download"><div class="actions"><button class="button primary" id="download-kit" type="button">Baixar meu roteiro <span aria-hidden="true">↓</span></button><button class="button outline" id="print-kit" type="button">Imprimir ou salvar PDF</button></div><p class="status-line" id="kit-status" role="status"></p></div></article>
+          <aside class="kit-details" aria-label="Conversa e cuidados para o roteiro"><article class="card conversation-card"><p class="eyebrow">UM ASSUNTO POSSÍVEL</p><h3>A curiosidade abre espaço.</h3><blockquote id="kit-conversation"></blockquote><p class="small-note">Use somente se fizer sentido para você. Pergunte, escute e também compartilhe algo seu.</p></article><article class="kit-care"><div class="care-item"><span class="care-icon" aria-hidden="true">◌</span><div><h3>Conforto para os dois</h3><p id="kit-comfort"></p></div></div><div class="care-item"><span class="care-icon" aria-hidden="true">♡</span><div><h3>Liberdade para escolher</h3><p id="kit-boundaries"></p></div></div></article></aside>
+        </div>
+      </section>
+
+      <section class="studio-section" id="plans" aria-labelledby="plans-title">
+        <div class="section-heading"><div><p class="eyebrow">UMA PROPOSTA EM CONSTRUÇÃO</p><h2 id="plans-title">Conteúdo que pode acompanhar você.</h2></div><p>Esta versão está em validação. O Kit360X inteiro está disponível em prévia gratuita, para você experimentar antes de qualquer oferta.</p></div>
+        <div class="pricing-grid"><article class="card pricing-card"><p class="mini-label">ESSENCIAL</p><h3>Um primeiro passo possível.</h3><p class="price">Grátis</p><p class="price-note">Para explorar no seu ritmo.</p><ul><li>Guia sobre aproximação e vínculos.</li><li>Plano com ações pequenas e flexíveis.</li><li>Ensaio das nove situações de conversa.</li></ul><a class="button outline" href="#ensaiar">Experimentar gratuitamente</a></article><article class="card pricing-card proposed-plan"><div class="plan-label">PREÇO PROPOSTO · VENDAS AINDA NÃO INICIADAS</div><p class="mini-label">KIT360X</p><h3>Três roteiros para levar.</h3><p class="price">R$ 29,90 <span>pagamento único</span></p><p class="price-note">Uma proposta de produto, aberta à validação.</p><ul><li>Três roteiros com atividades e assuntos.</li><li>Sugestões de conforto e combinações.</li><li>Roteiro para baixar, imprimir e adaptar.</li></ul><a class="button secondary" href="#kit">Ver amostra gratuita <span aria-hidden="true">↗</span></a><p class="small-note">Nenhuma compra ou cobrança está disponível nesta versão. O preço apresentado ainda é uma proposta.</p></article></div>
+      </section>
+
+      <section class="studio-section" id="aplicativo" aria-labelledby="app-title">
+        <div class="section-heading"><div><p class="eyebrow">UM ESPAÇO PARA LEVAR COM VOCÊ</p><h2 id="app-title">No navegador. E, quando possível, na sua tela inicial.</h2></div><p>A instalação é opcional e depende do navegador, do sistema e das políticas do dispositivo ou da hospedagem.</p></div>
+        <p><a class="button outline" href="studio-portatil.html" download>Baixar Estúdio em HTML ↓</a></p>
+        <div class="app-options"><article class="card install-card"><span class="app-icon" aria-hidden="true">n°</span><div><h3>Deixe o Namoro360X por perto.</h3><p>Adicione um atalho ou instale o aplicativo pelo navegador, quando esse recurso estiver disponível.</p><button class="button primary" type="button" id="install-app">Como instalar o aplicativo <span aria-hidden="true">↗</span></button><p class="status-line" id="pwa-status" role="status">A disponibilidade da instalação será verificada neste navegador.</p></div></article><article class="card offline-card"><p class="mini-label">UMA ESCOLHA DESTE APARELHO</p><h3>Preparar uma cópia offline.</h3><p>Se você ativar, os arquivos públicos do app serão guardados neste dispositivo para consultas sem conexão. Isso ocupa espaço no navegador.</p><div class="actions"><button class="button secondary" id="enable-offline" type="button">Ativar modo offline</button><button class="button outline" id="remove-offline" type="button">Remover cópia offline</button></div><p class="status-line" id="offline-status" role="status">A cópia offline só será preparada se você escolher ativar.</p></article></div>
+      </section>
+      <aside class="privacy-note" id="privacidade-estudio"><span aria-hidden="true">◇</span><div><h3>Praticar com tranquilidade.</h3><p>Os ensaios desta versão não são enviados pelo aplicativo para um servidor. Não há anúncios ou análise de comportamento no código. A hospedagem pode manter registros técnicos de acesso. As situações são fictícias; você não precisa cadastrar nomes, conversas ou dados de outras pessoas.</p><a href="index.html#privacidade">Entender as escolhas de privacidade <span aria-hidden="true">↗</span></a></div></aside>
+
+      <footer class="app-footer"><div><strong>Namoro360X · Estúdio360X</strong><p>Educação para adultos. Exemplos para adaptar, sem promessa de relacionamento ou tratamento.</p></div><nav aria-label="Links de rodapé"><a href="index.html#fontes">Fontes e limites</a><a href="index.html#privacidade">Privacidade</a><a href="https://github.com/aldenirfilho/namoro360x" target="_blank" rel="noopener noreferrer">Código <span aria-hidden="true">↗</span></a></nav><p>v1.3 · 03/11/2026</p></footer>
+    </main>
+  </div>
+
+  <dialog id="install-help" aria-labelledby="install-help-title"><p class="eyebrow">LEVAR O APP COM VOCÊ</p><h2 id="install-help-title">Instalar ou adicionar à tela inicial.</h2><p>Quando seu navegador oferecer um botão de instalação, você pode usá-lo para abrir o Namoro360X como aplicativo.</p><ul><li><strong>No computador:</strong> procure a opção de instalar na barra de endereço ou no menu do navegador.</li><li><strong>No celular:</strong> procure “Adicionar à tela inicial” ou “Instalar aplicativo” no menu. No Safari, confira as opções de compartilhamento.</li></ul><p class="small-note">Os nomes podem variar. O recurso pode não estar disponível em navegação privada, em arquivos locais ou devido a políticas do navegador, da hospedagem ou do aparelho. Você pode continuar usando o site normalmente.</p><button class="button primary" id="close-install-help" type="button">Entendi, continuar no estúdio</button></dialog>
+  <noscript><div class="noscript"><h2>Uma conversa no seu ritmo.</h2><p>Ative JavaScript para usar os ensaios e os roteiros interativos. Você também pode <a href="index.html">ler o guia completo</a> e combinar uma atividade em local público, com liberdade para os dois escolherem.</p></div></noscript>
+</body>
+</html>

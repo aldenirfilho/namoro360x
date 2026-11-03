@@ -4,7 +4,19 @@
 
 Site HTML educativo e interativo para adultos de 18 anos ou mais construírem vínculos saudáveis. Acolhe diferentes estilos de comunicação, com atenção à timidez e ao transtorno do déficit de atenção com hiperatividade (TDAH).
 
-## Versão 1.2 — 31/10/2026
+## Versão 1.3 — 03/11/2026
+
+O **Estúdio360X** (`studio.html`) acrescenta nove situações de conversa, 27 alternativas comentadas e três roteiros completos do Kit360X, com download TXT e impressão. Os exemplos são editoriais, sem chatbot, pontuação ou análise de pessoas. Tudo está em prévia gratuita.
+
+O aplicativo tem manifesto PWA, ícones e atalhos. Em navegadores compatíveis, pode ser adicionado à tela inicial. A cópia offline exige uma escolha separada no Estúdio: guarda apenas arquivos gerais do aplicativo, nunca respostas ou rascunhos. O controle de remoção é independente das preferências do plano e do guia. Instalação física em iPhone/Android e disponibilidade na App Store/Google Play não são afirmadas por esta entrega.
+
+**Monetização preparada como proposta:** aplicativo básico gratuito + Kit360X avulso por R$ 29,90 como preço a validar. Não existe cobrança ativa, assinatura, confirmação de pagamento ou área Premium protegida. Consulte [MONETIZACAO.md](MONETIZACAO.md) para a evolução da amostra até venda e entrega reais. Conteúdo em HTML público não é um controle de acesso pago.
+
+- Estúdio: [ensaios e Kit360X](https://namoro360x.aldenirmed.chatgpt.site/studio.html).
+- Instalação e offline: controles no final do Estúdio.
+- Público da hospedagem: continua privado para o proprietário; o repositório continua público.
+
+### Plano preservado da versão 1.2 — 31/10/2026
 
 O botão **Meu plano** abre `plano.html`, um aplicativo HTML com cinco áreas: Hoje, Meu plano, Reciprocidade, Conversas e Cuidados. Inclui quatro etapas flexíveis, doze passos, sete situações de reciprocidade, seis modelos de conversa e orientações para apps, Instagram e contextos sociais/profissionais.
 
@@ -40,7 +52,7 @@ npm run preview
 
 Abra o endereço `http://127.0.0.1:4173` exibido pelo servidor. Encerre a prévia com `Ctrl+C`.
 
-Para uso offline após o build, abra `dist/plano-relacionamento.html` para o novo plano ou `dist/namoro360x.html` para o guia original. Cada arquivo reúne seu HTML, CSS, JavaScript e imagens necessárias. Links para referências e para a outra ferramenta hospedada exigem internet. A cópia automática pode depender das permissões do navegador; existe seleção manual como alternativa. Não é necessário instalar o app, e não há service worker.
+Para uso offline após o build, abra `dist/studio-portatil.html`, `dist/plano-relacionamento.html` ou `dist/namoro360x.html`. Cada arquivo reúne seu HTML, CSS, JavaScript e imagens necessárias, sem manifestos ou registro de service worker. Os links entre as ferramentas portáteis apontam à hospedagem e exigem internet. Não é necessário instalar o app para usar os arquivos. O service worker existe somente na distribuição hospedada e só é registrado quando o visitante ativa a cópia offline no Estúdio.
 
 ## Privacidade
 

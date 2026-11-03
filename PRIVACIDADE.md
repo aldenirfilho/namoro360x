@@ -1,6 +1,6 @@
-# Privacidade e dados — versão 1.2
+# Privacidade e dados — versão 1.3
 
-Atualização: 31/10/2026.
+Atualização: 03/11/2026.
 
 O Namoro360X v1 é um guia estático. Não recebe inscrições nem mantém uma base de participantes.
 
@@ -16,6 +16,18 @@ O Namoro360X v1 é um guia estático. Não recebe inscrições nem mantém uma b
 - Oferece exclusão das escolhas armazenadas e limpeza dos rascunhos da sessão.
 
 ## O que depende do ambiente
+
+O Estúdio360X não persiste a escolha de situação, alternativa ou roteiro: após recarregar, volta à primeira opção. Os roteiros baixados ou impressos ficam sob controle de quem os salvou. Não há formulário de inscrição comercial ou captura de email.
+
+### Instalação e cópia offline
+
+Instalar pela interface do navegador e guardar uma cópia offline são escolhas diferentes. O botão **Ativar cópia offline** registra um service worker e armazena uma lista fechada de arquivos gerais do aplicativo em Cache Storage, incluindo guias, ilustração e exemplos. Isso requer navegador compatível e HTTPS ou localhost. Nenhum campo preenchido, resposta do ensaio, dado de pagamento ou resposta de API entra nessa lista. Os arquivos HTML portáteis não registram service worker.
+
+**Remover cópia offline** desregistra somente o worker desta instalação e exclui somente os caches Namoro360X deste escopo. Fechar abas pode ser necessário para encerrar um controlador anterior. Isso não apaga as preferências locais do plano/guia, arquivos baixados ou o ícone instalado: cada um tem seu controle próprio. A exclusão do cache não deve recriá-lo em uma aba antiga sem nova ativação.
+
+A cópia offline contém conteúdo geral, também disponível no código público. O acesso privado da hospedagem protege a visita online; não é DRM, não protege um produto pago e não impede leitura de conteúdo geral já baixado. O worker não substitui respostas de login ou acesso negado por um conteúdo salvo. Os caches não sincronizam entre dispositivos e podem ser apagados pelo navegador.
+
+Não há gateway de pagamento nesta versão. Uma futura cobrança terá informações específicas sobre vendedor, tratamento de dados, pagamento, entrega e suporte, antes de sua ativação.
 
 O provedor de hospedagem pode registrar informações técnicas de acesso. Links externos levam a serviços com suas próprias políticas. A área de transferência e a pasta Downloads pertencem ao sistema do visitante. Em dispositivo compartilhado, não guarde escolhas e proteja qualquer arquivo que decida baixar.
 

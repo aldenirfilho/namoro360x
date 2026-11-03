@@ -12,7 +12,7 @@ const app = await read('app.js');
 for (const match of app.matchAll(/\$\('([^']+)'\)/g)) if (!ids.includes(match[1]) && !['stage-title'].includes(match[1])) throw new Error('Controle ausente: ' + match[1]);
 for (const match of html.matchAll(/(?:src|href)="([^"#]+)"/g)) {
   const target = match[1];
-  if (/^(https:|data:)/.test(target) || target === 'namoro360x.html') continue;
+  if (/^(https:|data:)/.test(target) || target === 'namoro360x.html' || target.startsWith('assets/icon-')) continue;
   await access(path.join(root,target));
 }
 if (!html.includes('lang="pt-BR"') || !html.includes('viewport')) throw new Error('Metadados de acessibilidade ausentes');
@@ -40,7 +40,24 @@ const planApp=await read('plano.js');
 for(const match of planApp.matchAll(/\$\('([^']+)'\)/g))if(!planIds.includes(match[1]))throw new Error('Controle ausente no plano: '+match[1]);
 if(/innerHTML|eval\(|new Function\(/.test(planApp))throw new Error('Renderização insegura no plano');
 for(const match of planHtml.matchAll(/(?:src|href)="([^"#]+)"/g)){
-  const target=match[1];if(/^(https:|data:)/.test(target)||target==='plano-relacionamento.html')continue;
+  const target=match[1];if(/^(https:|data:)/.test(target)||target==='plano-relacionamento.html'||target.startsWith('assets/icon-'))continue;
   await access(path.join(root,target.split('#')[0]));
 }
 console.log('Plano aprovado: navegação, controles, assets e sintaxe.');
+const studioHtml=await read('studio.html'), studioIds=[...studioHtml.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
+if(studioIds.length!==new Set(studioIds).size)throw new Error('ID duplicado no Estúdio');
+for(const match of studioHtml.matchAll(/href="#([^"]+)"/g))if(!studioIds.includes(match[1]))throw new Error('Âncora ausente no Estúdio: '+match[1]);
+for(const file of ['studio-data.js','studio-engine.js','studio.js','pwa.js','sw.js'])new vm.Script(await read(file),{filename:file});
+for(const file of ['studio.js','pwa.js']){
+  const code=await read(file);
+  for(const match of code.matchAll(/\$\('([^']+)'\)/g))if(!studioIds.includes(match[1]))throw new Error('Controle ausente no Estúdio: '+match[1]);
+  if(/innerHTML|eval\(|new Function\(/.test(code))throw new Error('Renderização insegura no Estúdio');
+}
+for(const match of studioHtml.matchAll(/(?:src|href)="([^"#]+)"/g)){
+  const target=match[1];if(/^(https:|data:)/.test(target)||['studio-portatil.html'].includes(target)||target.startsWith('assets/icon-'))continue;
+  await access(path.join(root,target.split('#')[0]));
+}
+const manifest=JSON.parse(await read('manifest.webmanifest'));
+if(manifest.display!=='standalone'||!manifest.start_url||!manifest.scope||manifest.icons.length<3)throw new Error('Manifesto PWA incompleto');
+for(const page of [html,planHtml,studioHtml])if(!page.includes('data-n360-shell="1.3"')||!page.includes('rel="manifest"'))throw new Error('Metadados PWA ausentes');
+console.log('Estúdio e PWA aprovados: âncoras, controles, manifesto e sintaxe.');

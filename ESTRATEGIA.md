@@ -1,6 +1,14 @@
 # Estratégia do Namoro360X
 
-Estratégia de evolução · **30/10/2026** · Guia atualizado: versão 1.1.
+Estratégia de evolução · **03/11/2026** · Aplicativo atualizado: versão 1.3.
+
+## Atualização: transformar utilidade em produto
+
+A v1.2 adicionou um plano pessoal flexível; a v1.3 adiciona o Estúdio360X, instalação por navegador, cópia offline por escolha e três roteiros do Kit360X em prévia gratuita. Isso mantém o foco em uma ação possível, conversa com contexto e respeito às decisões dos participantes.
+
+As três prioridades agora são: observar uso voluntário do aplicativo; validar se um pacote editorial acrescenta conveniência suficiente para uma compra avulsa; configurar e testar pagamento e entrega somente depois de definir o produto vendido. Começar sem assinatura reduz a obrigação de produzir conteúdo contínuo antes de conhecer a procura. R$ 29,90 é hipótese de preço, sem demanda comprovada. [MONETIZACAO.md](MONETIZACAO.md) registra os critérios para ativar a operação.
+
+A tabela de versões abaixo preserva o planejamento original do guia. O piloto comunitário continua planejado, mesmo com a numeração do aplicativo avançando para 1.3; não há comunidade ativa ou participantes cadastrados.
 
 O Namoro360X ajuda adultos a encontrar assuntos, escolher atividades e preparar aproximações respeitosas. A proposta acolhe pessoas tímidas e pessoas com transtorno do déficit de atenção com hiperatividade (TDAH), respeitando também outros estilos de comunicação. Cada pessoa pode aproveitar uma sugestão, combinar ideias e deixar o restante para outro momento.
 
@@ -72,4 +80,4 @@ O projeto deve preservar relações de cuidado, avaliação e supervisão; aceit
 
 ## Próxima peça de desenvolvimento
 
-Observar a primeira experiência da v1.1: escolher uma necessidade, obter uma sugestão utilizável e poder sair com ela. O piloto manual poderá ser preparado quando houver um organizador e uma atividade real para oferecer.
+Observar a primeira experiência da v1.3: escolher uma situação, obter uma sugestão utilizável e levar um roteiro consigo. Validar utilidade e disposição voluntária para pagar por um pacote editado. O piloto manual poderá ser preparado quando houver um organizador e uma atividade real para oferecer.
