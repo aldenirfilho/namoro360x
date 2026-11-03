@@ -4,6 +4,14 @@
 
 Site HTML educativo e interativo para adultos de 18 anos ou mais construírem vínculos saudáveis. Acolhe diferentes estilos de comunicação, com atenção à timidez e ao transtorno do déficit de atenção com hiperatividade (TDAH).
 
+## Experimente a demonstração pública 🌿
+
+O Namoro360X está aberto para visitantes desde **03/11/2026**. Explore gratuitamente as atividades, adapte exemplos de conversa e prepare um convite no seu ritmo.
+
+**[Abrir a demonstração gratuita](https://namoro360x.aldenirmed.chatgpt.site/conheca.html?utm_source=github&utm_medium=readme&utm_campaign=namoro360x_estreia)** · **[Explorar o Estúdio360X](https://namoro360x.aldenirmed.chatgpt.site/studio.html?utm_source=github&utm_medium=readme&utm_campaign=namoro360x_estreia)**
+
+Conteúdo educativo para adultos de 18 anos ou mais, sem cadastro e sem garantia de relacionamento. A compra do Kit360X ainda está indisponível.
+
 ## Versão 1.3 — 03/11/2026
 
 O **Estúdio360X** (`studio.html`) acrescenta nove situações de conversa, 27 alternativas comentadas e três roteiros completos do Kit360X, com download TXT e impressão. Os exemplos são editoriais, sem chatbot, pontuação ou análise de pessoas. Tudo está em prévia gratuita.
@@ -14,7 +22,7 @@ O aplicativo tem manifesto PWA, ícones e atalhos. Em navegadores compatíveis, 
 
 - Estúdio: [ensaios e Kit360X](https://namoro360x.aldenirmed.chatgpt.site/studio.html).
 - Instalação e offline: controles no final do Estúdio.
-- Público da hospedagem: continua privado para o proprietário; o repositório continua público.
+- Público da hospedagem: **público**, conforme autorização do titular em 03/11/2026; o repositório também é público.
 
 ### Plano preservado da versão 1.2 — 31/10/2026
 
@@ -24,7 +32,7 @@ O painel oferece uma ação por vez, ritmo de 5 ou 15 minutos e pausa. Os tempos
 
 - Site: [Namoro360X](https://namoro360x.aldenirmed.chatgpt.site/).
 - Aplicativo: [Meu plano](https://namoro360x.aldenirmed.chatgpt.site/plano.html).
-- Acesso do site: privado para o proprietário, preservado nesta atualização. O código do repositório continua público.
+- Acesso do site: **público desde 03/11/2026**. O código do repositório continua público.
 
 ### Ferramentas preservadas do guia 1.1
 
