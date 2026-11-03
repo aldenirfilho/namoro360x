@@ -2,6 +2,18 @@
 
 Hipótese de produto · **03/11/2026** · Evolução proposta para a versão 1.3.
 
+## Preparação operacional 1.4 — 03/11/2026
+
+Estado verificado nesta sessão: a hospedagem permanece restrita ao proprietário; a conta Stripe Projeto360x foi selecionada pelo titular, mas `charges_enabled` e `payouts_enabled` estão falsos, com pendências de verificação de identidade. Resolver apenas no painel oficial da Stripe. Não pedir documentos, data de nascimento ou selfie pelo aplicativo ou pelo chat. A conexão existente não equivale à habilitação de vendas.
+
+A página `conheca.html` oferece a demonstração e informa que a compra ainda não está disponível. O pacote externo à pasta pública contém guia, plano e Estúdio portáteis com navegação relativa, caderno de impressão, instruções e hashes. O caderno organiza os mesmos três roteiros gratuitos; não existe alegação de conteúdo exclusivo. O preço de R$ 29,90 permanece hipótese anterior, sem decisão comercial final.
+
+O caminho de entrada escolhido é uma ferramenta educativa para adultos que desejam preparar uma atividade e um convite. Resultado proposto para validar: a pessoa consegue escolher uma ideia, adaptar suas palavras e preparar um convite claro. Essa sequência mede ações próprias; não mede interesse de terceiros. O aplicativo não é uma rede de encontros.
+
+Divulgação inicial: demonstrações orgânicas no Facebook e conteúdo indexável no Google, após acesso público verificado. Nenhuma campanha paga foi criada. Hotmart pode receber o pacote de download depois de cadastrar vendedor, suporte e condições comerciais. O cadastro não foi executado nesta sessão. O canal OpenAI não é tratado como checkout de conteúdo digital; sua elegibilidade depende das políticas vigentes.
+
+Para abrir vendas, faltam habilitação do processador, preço final, identificação comercial do vendedor, suporte, condições de licença/reembolso e entrega testada de ponta a ponta. Na Stripe, a entrega exige confirmação autenticada e idempotente por webhook; retorno à página de sucesso não comprova pagamento. Na Hotmart, usar a entrega gerenciada pela plataforma e verificar o acesso do comprador. Nenhum volume de vendas, taxa de conversão ou receita foi presumido.
+
 ## O que está sendo oferecido nesta versão
 
 O aplicativo base permanece gratuito. O Estúdio de conversas apresenta nove situações educativas com alternativas e comentários, sem pontuação, diagnóstico ou previsão sobre pessoas. O Kit360X demonstra três roteiros aprofundados de atividades: café e leitura, visita cultural e pequena roda de curiosidades.

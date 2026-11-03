@@ -61,3 +61,12 @@ const manifest=JSON.parse(await read('manifest.webmanifest'));
 if(manifest.display!=='standalone'||!manifest.start_url||!manifest.scope||manifest.icons.length<3)throw new Error('Manifesto PWA incompleto');
 for(const page of [html,planHtml,studioHtml])if(!page.includes('data-n360-shell="1.3"')||!page.includes('rel="manifest"'))throw new Error('Metadados PWA ausentes');
 console.log('Estúdio e PWA aprovados: âncoras, controles, manifesto e sintaxe.');
+const presentation=await read('conheca.html');
+const presentationIds=[...presentation.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);
+if(presentationIds.length!==new Set(presentationIds).size)throw new Error('ID duplicado na apresentação');
+for(const match of presentation.matchAll(/href="#([^"]+)"/g))if(!presentationIds.includes(match[1]))throw new Error('Âncora ausente na apresentação: '+match[1]);
+for(const match of presentation.matchAll(/(?:src|href)="([^"#]+)"/g)){
+  if(/^(https:|data:)/.test(match[1]))continue;
+  await access(path.join(root,match[1].split('#')[0]));
+}
+console.log('Apresentação aprovada: âncoras e destinos locais.');

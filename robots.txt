@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://namoro360x.aldenirmed.chatgpt.site/sitemap.xml

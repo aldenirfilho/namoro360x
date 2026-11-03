@@ -4,7 +4,13 @@
 
 Site HTML educativo e interativo para adultos de 18 anos ou mais construírem vínculos saudáveis. Acolhe diferentes estilos de comunicação, com atenção à timidez e ao transtorno do déficit de atenção com hiperatividade (TDAH).
 
-## Versão 1.3 — 03/11/2026
+## Versão 1.4 — 03/11/2026
+
+A página `conheca.html` apresenta o produto e a demonstração gratuita, com metadados de compartilhamento, sitemap e informação explícita de que a compra ainda está indisponível. A conta Stripe selecionada pelo titular é Projeto360x; a consulta de 03/11 confirmou que pagamentos e repasses estão desabilitados, com verificação de identidade pendente. Nenhum dado de identidade deve ser colocado no repositório.
+
+Os três HTMLs portáteis agora navegam entre si por caminhos relativos. Após `npm run build`, gere um pacote organizado fora de `dist` com `node scripts/package-kit.mjs /caminho/absoluto/para/kit`. O pacote acrescenta um caderno para impressão, instruções e hashes SHA-256. Não publica arquivos de entrega, não cria checkout e não comprova compra. Validação em aparelho físico permanece pendente.
+
+### Estúdio preservado da versão 1.3 — 03/11/2026
 
 O **Estúdio360X** (`studio.html`) acrescenta nove situações de conversa, 27 alternativas comentadas e três roteiros completos do Kit360X, com download TXT e impressão. Os exemplos são editoriais, sem chatbot, pontuação ou análise de pessoas. Tudo está em prévia gratuita.
 
@@ -52,7 +58,7 @@ npm run preview
 
 Abra o endereço `http://127.0.0.1:4173` exibido pelo servidor. Encerre a prévia com `Ctrl+C`.
 
-Para uso offline após o build, abra `dist/studio-portatil.html`, `dist/plano-relacionamento.html` ou `dist/namoro360x.html`. Cada arquivo reúne seu HTML, CSS, JavaScript e imagens necessárias, sem manifestos ou registro de service worker. Os links entre as ferramentas portáteis apontam à hospedagem e exigem internet. Não é necessário instalar o app para usar os arquivos. O service worker existe somente na distribuição hospedada e só é registrado quando o visitante ativa a cópia offline no Estúdio.
+Para uso offline após o build, mantenha `dist/studio-portatil.html`, `dist/plano-relacionamento.html` e `dist/namoro360x.html` na mesma pasta. Cada arquivo reúne seu HTML, CSS, JavaScript e imagens necessárias, sem manifestos ou registro de service worker. Os links entre essas ferramentas são relativos e funcionam sem a hospedagem. Referências e instruções de instalação hospedadas exigem internet. O service worker existe somente na distribuição hospedada e só é registrado quando o visitante ativa a cópia offline no Estúdio.
 
 ## Privacidade
 
