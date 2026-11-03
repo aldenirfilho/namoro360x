@@ -1,13 +1,14 @@
 # Verificação da versão 1.3 — 03/11/2026
 
 - `npm run check`: integridade do guia, plano, Estúdio e manifesto aprovada.
-- `npm test`: 61 testes aprovados. Os 32 novos cobrem dados reais do Estúdio, correspondência cenário/alternativa, exportação limitada do kit e service worker (SW): lista fechada de arquivos, instalação parcial, cota de cache, conteúdo offline, respostas de autenticação autoritativas, remoção estável e isolamento entre escopos.
+- `npm test`: 67 testes aprovados. Os 38 novos cobrem dados reais do Estúdio, correspondência cenário/alternativa, exportação limitada do kit e service worker (SW): lista fechada de arquivos, instalação parcial, cota de cache, conteúdo offline, respostas de autenticação autoritativas, remoção estável e isolamento entre escopos.
 - `npm run build`: três ferramentas hospedadas e três HTMLs autossuficientes. Ícones PNG 192 × 192 e 512 × 512 conferidos. SW final sem placeholders e com revisão calculada dos arquivos.
 - Navegador real: tela do Estúdio em 1280 × 720, 390 × 844 e 320 × 780, sem rolagem horizontal inesperada. Alternativas, feedback, mudança de cenário, reinício por recarga e seleção de roteiros conferidos. Nenhuma resposta do ensaio foi restaurada após recarregar.
 - Download real de `kit360x-grupo-curioso.txt` pelo botão do navegador confirmado. O arquivo não é um evento ou convite enviado.
 - Estúdio portátil conferido em tela de 320 px: seleções e feedback funcionam; não possui scripts externos, estilos externos, manifesto ou controles de instalação. Integridade dos três arquivos portáteis também conferida após build.
 - Instruções de instalação abrem e fecham corretamente. O navegador integrado não confirmou o registro do SW; a interface interrompe a espera, informa a falta de confirmação e mantém o uso online e o HTML portátil disponíveis. Os testes do SW são automatizados em ambiente controlado; não equivalem a homologação offline no dispositivo.
 - Sem erros ou avisos JavaScript capturados nas telas exercitadas. Acesso da hospedagem preservado como privado para o proprietário. Preço proposto visível, com amostra gratuita; não há cobrança ativa.
+- Hospedagem aberta com a sessão do proprietário: Estúdio, ensaio, reinício e link do plano conferidos. O servidor normaliza `.html` para endereços sem extensão. O SW reconhece ambos, aceitando somente redirecionamento para o endereço canônico esperado na mesma origem, com marcador de aplicação. Redirecionamentos para login, origem externa, outro caminho ou parâmetros diferentes continuam rejeitados; 22 testes específicos do SW cobrem essas regras.
 
 **Limites:** instalação em iPhone/Android, funcionamento offline de ponta a ponta em navegador compatível e impressão/PDF no aparelho permanecem para homologação. Não houve auditoria formal com leitores de tela. Não há contas de participantes, pagamento, confirmação de compra ou moderação operacional.
 

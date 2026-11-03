@@ -10,7 +10,7 @@ const template = fs.readFileSync(path.join(__dirname, '../sw.js'), 'utf8');
 const shell = ['index.html', 'plano.html', 'studio.html', 'app.js', 'styles.css', 'manifest.webmanifest', 'favicon.svg', 'assets/icon-192.png'];
 const rootScope = 'https://example.invalid/namoro360x/';
 
-function responseFor(url, { status = 200, html, redirected = false, type } = {}) {
+function responseFor(url, { status = 200, html, redirected = false, type, finalURL = url } = {}) {
   const pathname = new URL(url).pathname;
   let contentType = 'text/html', body = html || '<!doctype html><html data-n360-shell="1.3"><body>Conteúdo público</body></html>';
   if (pathname.endsWith('.js')) { contentType = 'text/javascript'; body = '/* public application */'; }
@@ -19,7 +19,7 @@ function responseFor(url, { status = 200, html, redirected = false, type } = {})
   if (pathname.endsWith('.png')) { contentType = 'image/png'; body = 'public-image-fixture'; }
   if (pathname.endsWith('.svg')) { contentType = 'image/svg+xml'; body = '<svg xmlns="http://www.w3.org/2000/svg"></svg>'; }
   const response = new Response(body, { status, headers: { 'content-type': type || contentType } });
-  Object.defineProperty(response, 'url', { value: url });
+  Object.defineProperty(response, 'url', { value: finalURL });
   Object.defineProperty(response, 'redirected', { value: redirected });
   Object.defineProperty(response, 'type', { value: 'basic' });
   return response;
@@ -126,13 +126,58 @@ test('falha de quota durante instalação remove a nova cache parcial', async ()
   assert.deepEqual(await h.caches.keys(), []);
 });
 
-test('redirecionamento e tipo MIME incorreto não viram conteúdo offline', async () => {
-  for (const options of [{ redirected: true }, { type: 'text/plain' }]) {
+test('redirecionamento para login e tipo MIME incorreto não viram conteúdo offline', async () => {
+  for (const options of [{ redirected: true, finalURL: new URL('login', rootScope).href }, { type: 'text/plain' }]) {
     const h = harness();
     h.network(async request => responseFor(request, options));
     await assert.rejects(h.lifecycle('install'));
     assert.deepEqual(await h.caches.keys(), []);
   }
+});
+
+test('normalização da hospedagem de studio.html para studio é aceita somente com marcador válido', async () => {
+  const h = harness();
+  h.network(async request => responseFor(request, request.endsWith('/studio.html') ? {
+    redirected: true, finalURL: request.slice(0, -5)
+  } : {}));
+  await h.lifecycle('install');
+  const names = await h.caches.keys();
+  assert.equal(names.length, 1);
+  const entries = h.caches.databases.get(names[0]);
+  assert.ok(entries.has(new URL('studio.html', rootScope).href));
+  assert.equal(entries.has(new URL('studio', rootScope).href), false, 'O alias deve reutilizar a chave original do asset.');
+});
+
+test('redirect de index.html para a raiz do mesmo escopo mantém a instalação possível', async () => {
+  const h = harness();
+  h.network(async request => responseFor(request, request.endsWith('/index.html') ? {
+    redirected: true, finalURL: rootScope
+  } : {}));
+  await h.lifecycle('install');
+  assert.equal((await h.caches.keys()).length, 1);
+});
+
+test('redirect para origem externa, login, outro caminho ou alias com query é rejeitado mesmo com marcador', async () => {
+  for (const finalURL of [
+    'https://third-party.invalid/namoro360x/studio',
+    new URL('login', rootScope).href,
+    new URL('outro-studio', rootScope).href,
+    new URL('studio?auth=example', rootScope).href
+  ]) {
+    const h = harness();
+    h.network(async request => responseFor(request, request.endsWith('/studio.html') ? { redirected: true, finalURL } : {}));
+    await assert.rejects(h.lifecycle('install'), finalURL);
+    assert.deepEqual(await h.caches.keys(), [], finalURL);
+  }
+});
+
+test('alias canônico sem marcador de aplicação não transforma login em conteúdo offline', async () => {
+  const h = harness();
+  h.network(async request => responseFor(request, request.endsWith('/studio.html') ? {
+    redirected: true, finalURL: request.slice(0, -5), html: '<html><form>Entrar</form></html>'
+  } : {}));
+  await assert.rejects(h.lifecycle('install'));
+  assert.deepEqual(await h.caches.keys(), []);
 });
 
 test('somente GET da allowlist é interceptado', async () => {
@@ -141,7 +186,7 @@ test('somente GET da allowlist é interceptado', async () => {
   h.calls.length = 0;
   for (const [url, method] of [
     ['index.html', 'POST'], ['app.js', 'PUT'], ['https://third-party.invalid/index.html', 'GET'],
-    ['index.html?auth=example', 'GET'], ['app.js?v=1', 'GET'], ['api/participants', 'GET'],
+    ['index.html?auth=example', 'GET'], ['studio?auth=example', 'GET'], ['app.js?v=1', 'GET'], ['api/participants', 'GET'],
     ['checkout', 'GET'], ['auth/callback', 'GET'], ['conta.html', 'GET']
   ]) {
     const result = await h.request(url, method);
@@ -194,6 +239,27 @@ test('rede offline encontra conteúdo validado em cache', async () => {
     const result = await h.request(file);
     assert.equal(result.response.status, 200);
   }
+});
+
+test('GET studio sem extensão encontra offline a mesma entrada de studio.html', async () => {
+  const h = harness();
+  h.network(async request => responseFor(request, request.endsWith('/studio.html') ? { redirected: true, finalURL: request.slice(0, -5) } : {}));
+  await h.lifecycle('install');
+  h.network(async () => { throw new TypeError('offline'); });
+  const result = await h.request('studio');
+  assert.equal(result.handled, true);
+  assert.equal(result.response.status, 200);
+  assert.match(await result.response.text(), /data-n360-shell="1.3"/);
+});
+
+test('atualização online pelo alias usa a chave original também ao voltar para studio.html', async () => {
+  const h = harness();
+  await h.lifecycle('install');
+  const updated = '<html data-n360-shell="1.3"><body>Estúdio atualizado no caminho limpo</body></html>';
+  h.network(async request => responseFor(request.url || request, { html: updated }));
+  assert.equal(await (await h.request('studio')).response.text(), updated);
+  h.network(async () => { throw new TypeError('offline'); });
+  assert.equal(await (await h.request('studio.html')).response.text(), updated);
 });
 
 test('HTTP 200 de login é autoritativo e não é substituído pelo conteúdo offline', async () => {

@@ -4,10 +4,18 @@ const CACHE_PREFIX = 'namoro360x-shell-' + encodeURIComponent(new URL(self.regis
 const CACHE_NAME = CACHE_PREFIX + '__N360_REVISION__';
 const SHELL = __N360_SHELL__;
 const urls = SHELL.map(file => new URL(file,self.registration.scope).href);
-const allowed = new Set(urls);
+function canonical(value) {
+  const url=new URL(value);
+  if(url.pathname.endsWith('/index.html')) url.pathname=url.pathname.slice(0,-10);
+  else if(url.pathname.endsWith('.html')) url.pathname=url.pathname.slice(0,-5);
+  return url.href;
+}
+const aliases = new Map(urls.flatMap(url => [[url,url],[canonical(url),url]]));
 const HTML_MARKER = 'data-n360-shell="1.3"';
 async function cacheable(response,url) {
-  if (!response.ok || response.redirected || response.type === 'opaque') return false;
+  if (!response.ok || response.type === 'opaque') return false;
+  // The static host normalizes .html routes. Accept only that same-origin canonical target.
+  if (response.redirected && (!response.url || canonical(response.url) !== canonical(url))) return false;
   const type=response.headers.get('content-type') || '';
   if (url.endsWith('.html')) return type.includes('text/html') && (await response.clone().text()).includes(HTML_MARKER);
   if (url.endsWith('.js')) return /javascript/.test(type);
@@ -34,16 +42,16 @@ self.addEventListener('fetch',event => {
   if (event.request.method !== 'GET') return;
   const url=new URL(event.request.url);
   if (url.origin !== self.location.origin || url.search) return;
-  if (url.href === self.registration.scope) url.pathname += 'index.html';
-  if (!allowed.has(url.href)) return;
+  const key=aliases.get(url.href);
+  if (!key) return;
   event.respondWith((async () => {
     const cache=(await caches.has(CACHE_NAME)) ? await caches.open(CACHE_NAME) : null;
     try {
       const response=await fetch(event.request);
-      if (await cacheable(response,url.href)) {if(cache) {try {await cache.put(url.href,response.clone());}catch{/* Quota limits must not block online use. */}} return response;}
+      if (await cacheable(response,key)) {if(cache) {try {await cache.put(key,response.clone());}catch{/* Quota limits must not block online use. */}} return response;}
       // Authentication failures/gates remain authoritative; never replace them with a cached shell.
       if (response.status < 500) return response;
-      return (cache && await cache.match(url.href)) || response;
-    } catch {return (cache && await cache.match(url.href)) || new Response('Conteúdo indisponível. Conecte-se à internet para preparar a cópia offline.',{status:503,headers:{'Content-Type':'text/plain;charset=utf-8'}});}
+      return (cache && await cache.match(key)) || response;
+    } catch {return (cache && await cache.match(key)) || new Response('Conteúdo indisponível. Conecte-se à internet para preparar a cópia offline.',{status:503,headers:{'Content-Type':'text/plain;charset=utf-8'}});}
   })());
 });
