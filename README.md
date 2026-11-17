@@ -6,6 +6,8 @@ Site HTML educativo e interativo para adultos de 18 anos ou mais construírem v�
 
 ## Versão 1.4 — 03/11/2026
 
+Atualização 1.4.1 — 17/11/2026: apresentação com imagem e texto alternativo para prévias de compartilhamento e URLs canônicas normalizadas no sitemap. O acesso público, autorizado em 03/11, foi reconfirmado em 17/11. A consulta Stripe de 17/11 exigiu reconexão; não foi possível rever a habilitação atual de pagamentos. Nenhum checkout foi ativado.
+
 A página `conheca.html` apresenta o produto e a demonstração gratuita, com metadados de compartilhamento, sitemap e informação explícita de que a compra ainda está indisponível. A conta Stripe selecionada pelo titular é Projeto360x; a consulta de 03/11 confirmou que pagamentos e repasses estão desabilitados, com verificação de identidade pendente. Nenhum dado de identidade deve ser colocado no repositório.
 
 Os três HTMLs portáteis agora navegam entre si por caminhos relativos. Após `npm run build`, gere um pacote organizado fora de `dist` com `node scripts/package-kit.mjs /caminho/absoluto/para/kit`. O pacote acrescenta um caderno para impressão, instruções e hashes SHA-256. Não publica arquivos de entrega, não cria checkout e não comprova compra. Validação em aparelho físico permanece pendente.
@@ -20,7 +22,7 @@ O aplicativo tem manifesto PWA, ícones e atalhos. Em navegadores compatíveis, 
 
 - Estúdio: [ensaios e Kit360X](https://namoro360x.aldenirmed.chatgpt.site/studio.html).
 - Instalação e offline: controles no final do Estúdio.
-- Público da hospedagem: continua privado para o proprietário; o repositório continua público.
+- Público da hospedagem: público desde 03/11/2026, conforme autorização do titular; o repositório também é público.
 
 ### Plano preservado da versão 1.2 — 31/10/2026
 
@@ -30,7 +32,7 @@ O painel oferece uma ação por vez, ritmo de 5 ou 15 minutos e pausa. Os tempos
 
 - Site: [Namoro360X](https://namoro360x.aldenirmed.chatgpt.site/).
 - Aplicativo: [Meu plano](https://namoro360x.aldenirmed.chatgpt.site/plano.html).
-- Acesso do site: privado para o proprietário, preservado nesta atualização. O código do repositório continua público.
+- Acesso do site: público desde 03/11/2026. O código do repositório continua público.
 
 ### Ferramentas preservadas do guia 1.1
 

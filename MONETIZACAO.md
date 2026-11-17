@@ -2,6 +2,12 @@
 
 Hipótese de produto · **03/11/2026** · Evolução proposta para a versão 1.3.
 
+## Retomada de 17/11/2026
+
+Hospedagem pública e três posts de lançamento confirmados como publicados. As métricas consultadas no Metricool para 03–16/11 retornaram zero alcance e cliques nos três posts; esse retorno não comprova ausência de visitas ou de demanda, pois o site não possui medição própria. Nova divulgação continua orgânica, com foco nas funções efetivamente disponíveis.
+
+A conexão Stripe passou a exigir reautenticação, impedindo conferir a habilitação atual. A pendência de identidade descrita abaixo é a fotografia de 03/11. A Hotmart abriu na tela de login no navegador consultado; cadastro do Kit360X não foi executado. O preço continua hipótese. Nenhuma venda, cobrança ou campanha paga foi ativada.
+
 ## Preparação operacional 1.4 — 03/11/2026
 
 Estado verificado nesta sessão: a hospedagem permanece restrita ao proprietário; a conta Stripe Projeto360x foi selecionada pelo titular, mas `charges_enabled` e `payouts_enabled` estão falsos, com pendências de verificação de identidade. Resolver apenas no painel oficial da Stripe. Não pedir documentos, data de nascimento ou selfie pelo aplicativo ou pelo chat. A conexão existente não equivale à habilitação de vendas.
