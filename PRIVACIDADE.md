@@ -1,6 +1,6 @@
-# Privacidade e dados — versão 1.3
+# Privacidade e dados — versão 1.5
 
-Atualização: 03/11/2026.
+Atualização: 23/11/2026.
 
 O Namoro360X v1 é um guia estático. Não recebe inscrições nem mantém uma base de participantes.
 
@@ -15,6 +15,20 @@ O Namoro360X v1 é um guia estático. Não recebe inscrições nem mantém uma b
 - Permite copiar o texto e baixar arquivos por solicitação do visitante. Esses arquivos ficam no dispositivo e podem continuar existindo após limpar os dados do site.
 - Oferece exclusão das escolhas armazenadas e limpeza dos rascunhos da sessão.
 
+## Arquivo de progresso e transferência manual
+
+Na área **Cuidados**, a seção **Leve seu plano com você** permite baixar e restaurar um JSON do Meu plano. **Baixar meu progresso** funciona independentemente da opção de salvamento local: copia o progresso que está disponível na aba naquele momento.
+
+O arquivo contém somente os IDs dos passos concluídos, a etapa aberta e o ritmo, além dos identificadores técnicos de formato necessários à validação. Não contém nomes, contatos, perfis de pessoas, convites, rascunhos, textos de conversa ou preferências do guia. Também não transporta a opção de guardar progresso no navegador.
+
+**Restaurar um arquivo de progresso** abre o seletor de arquivos do dispositivo. A leitura e a validação são locais; o arquivo não é enviado ao servidor do Namoro360X. A estrutura, o formato, o limite de 10 kB e as referências a etapas e passos conhecidos são conferidos antes de apresentar uma prévia da quantidade de passos, etapa e ritmo. Um arquivo inválido não substitui o plano atual.
+
+A substituição depende de **Restaurar este progresso**. **Manter meu plano atual** cancela sem alterar o progresso existente. A restauração não mescla planos e preserva a adesão ao salvamento do navegador de destino: se estava desativada, o progresso restaurado continua apenas na sessão; se estava ativada, mantém esse modo. O comportamento do armazenamento ainda depende das permissões e condições do navegador.
+
+O JSON permite conhecer escolhas de uso do aplicativo e deve ser guardado de acordo com a preferência do visitante. Transferir o arquivo por AirDrop, iCloud Drive ou outro serviço é uma ação separada, sujeita às condições do meio escolhido. Excluir dados locais do site não apaga Downloads, arquivos enviados ou cópias de backup. Não envie esses arquivos em issues públicas do GitHub.
+
+Não há conta, envio automático, sincronização entre aparelhos ou recuperação pelo servidor. A experiência de transferência e restauração em iPhone físico ainda precisa de verificação própria.
+
 ## O que depende do ambiente
 
 O Estúdio360X não persiste a escolha de situação, alternativa ou roteiro: após recarregar, volta à primeira opção. Os roteiros baixados ou impressos ficam sob controle de quem os salvou. Não há formulário de inscrição comercial ou captura de email.
@@ -25,9 +39,9 @@ Instalar pela interface do navegador e guardar uma cópia offline são escolhas 
 
 **Remover cópia offline** desregistra somente o worker desta instalação e exclui somente os caches Namoro360X deste escopo. Fechar abas pode ser necessário para encerrar um controlador anterior. Isso não apaga as preferências locais do plano/guia, arquivos baixados ou o ícone instalado: cada um tem seu controle próprio. A exclusão do cache não deve recriá-lo em uma aba antiga sem nova ativação.
 
-A cópia offline contém conteúdo geral, também disponível no código público. O acesso privado da hospedagem protege a visita online; não é DRM, não protege um produto pago e não impede leitura de conteúdo geral já baixado. O worker não substitui respostas de login ou acesso negado por um conteúdo salvo. Os caches não sincronizam entre dispositivos e podem ser apagados pelo navegador.
+A hospedagem é pública, conforme autorização do titular, e esse estado foi reconfirmado em 23/11/2026. A cópia offline contém conteúdo geral, também disponível no código público. Ela não é DRM, não protege um produto pago e não impede leitura de conteúdo geral já baixado. O worker não substitui respostas de login ou acesso negado por um conteúdo salvo. Os caches não sincronizam entre dispositivos e podem ser apagados pelo navegador. Arquivos de progresso selecionados pelo visitante não entram na lista da cópia offline.
 
-Não há gateway de pagamento nesta versão. Uma futura cobrança terá informações específicas sobre vendedor, tratamento de dados, pagamento, entrega e suporte, antes de sua ativação.
+O checkout permanece indisponível nesta versão. R$ 29,90 continua sendo apenas uma hipótese de preço para um kit avulso. O estado atual da conta Stripe não foi consultado nesta atualização. Uma futura cobrança terá informações específicas sobre vendedor, tratamento de dados, pagamento, entrega e suporte antes de sua ativação.
 
 O provedor de hospedagem pode registrar informações técnicas de acesso. Links externos levam a serviços com suas próprias políticas. A área de transferência e a pasta Downloads pertencem ao sistema do visitante. Em dispositivo compartilhado, não guarde escolhas e proteja qualquer arquivo que decida baixar.
 

@@ -6,3 +6,35 @@
 @media(max-width:720px){.sidebar{position:fixed;top:auto;bottom:0;left:0;right:0;width:100%;height:auto;padding:7px 7px calc(7px + env(safe-area-inset-bottom));background:var(--white);border-top:1px solid var(--line);box-shadow:0 -5px 25px #382b3f08}.sidebar>.logo,.nav-label,.sidebar-note,.back-link,.sidebar-version{display:none}.app-nav{display:grid;grid-template-columns:repeat(5,1fr);gap:3px}.app-nav a{padding:8px 1px 6px;flex-direction:column;gap:5px;border-radius:10px;color:#75657c;font-size:9px;line-height:1.3;min-height:55px}.app-nav a>span:first-child{font-size:23px;width:auto}.app-nav a:hover{background:#f3eef5}.app-nav a[aria-current=page]{background:#eee7f1;color:#5c3e67}.app-shell{margin-left:0}.mobile-brand{display:inline!important;font-size:13px;margin:0!important}.topbar{height:62px;padding:0 20px}.topbar p{font-size:0}.topbar p>span:not(.mobile-brand){display:none}.topbar p>strong{font-size:12px}.privacy-link{font-size:10px}.privacy-link span{display:none}main{padding:26px 19px 95px}.eyebrow{font-size:9px;letter-spacing:1.5px}h1{font-size:27px;letter-spacing:-.7px}.page-heading{margin-bottom:23px}.hero-card{margin-bottom:18px;min-height:0;border-radius:20px}.hero-card figure{height:190px}.hero-card figcaption{bottom:10px;left:12px;right:12px;font-size:9px;padding:7px}.hero-text{padding:24px}.hero-text h2{font-size:32px}.hero-text p{font-size:13px}.hero-text small{font-size:10px}.card{padding:23px;border-radius:19px}.card h2{font-size:22px}.dashboard-grid{gap:17px}.section-heading h2{font-size:20px}.card .mini{font-size:11px}.actions{align-items:flex-start;flex-direction:column;gap:14px}.actions .button{width:100%}.stage-tabs{gap:8px}.stage-tabs button{font-size:12px;gap:8px}.stage-banner{gap:15px}.large-step{font-size:42px}.stage-banner h2{font-size:22px}.task-row{padding:14px;gap:11px}.task-row strong{font-size:14px}.task-row .task-time{display:none}.task-row small{font-size:12px}.intro{font-size:14px}.message-options{grid-template-columns:1fr 1fr;gap:8px}.message-options button{padding:12px;font-size:11px}.message-card blockquote{font-size:22px}.privacy-card{gap:15px}.privacy-actions .button{width:100%}.app-footer{flex-direction:column;gap:5px;font-size:10px;margin-top:28px}.toast{bottom:94px;left:50%;font-size:12px;max-width:calc(100vw - 30px);white-space:normal}.gentle-note{padding:18px}.sources summary{font-size:14px}.two-columns,.signals-grid{gap:18px}.clear-invite{margin-top:18px}select{font-size:13px}.detail-body{padding:0 21px 21px}summary{padding:21px}.hero-text .button{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 @media print{.sidebar,.topbar,.app-footer,.toast,.button,dialog,.stage-tabs,.segmented,.message-options{display:none!important}.app-shell{margin:0}main{padding:0}.view[hidden]{display:block!important}.view{break-before:page}.view:first-child{break-before:auto}.hero-card{min-height:0}.card,.hero-card,.principle{break-inside:avoid;box-shadow:none}.hero-card figure{max-height:200px}body{font-size:11pt;background:white}.card p{font-size:10pt}.card{padding:14px}.app-shell{width:100%}}
+
+/* v1.5 · transferência de progresso escolhida pelo usuário */
+@media screen{body{font-size:16px}}
+.button{font-size:14px}
+.backup-quick{margin-top:14px}
+.backup-quick .text-link{min-height:44px;padding-block:9px;font-size:14px;line-height:1.7}
+.backup-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);align-items:start;gap:30px;margin:25px 0;border-color:#d5c7dd;background:#fbf8fc}
+.backup-card>div,.backup-controls,.backup-file-field{min-width:0}
+.backup-card p{font-size:16px;line-height:1.75}
+.backup-card .eyebrow{font-size:12px;color:var(--plum)}
+.backup-card .mini{font-size:14px;line-height:1.75}
+.backup-card #backup-import-help{margin-top:19px;padding-top:17px;border-top:1px solid var(--line)}
+.backup-controls{display:flex;align-items:stretch;flex-direction:column;gap:20px}
+.backup-controls>.button{align-self:flex-start;min-height:46px;font-size:14px}
+.backup-file-field{padding-top:18px;border-top:1px solid var(--line)}
+.backup-file-label{display:block;margin-bottom:10px;color:var(--ink);font-size:14px;font-weight:600;line-height:1.7}
+#import-plan{display:block;width:100%;max-width:100%;min-width:0;min-height:48px;padding:5px;border:1px solid #c4b3cc;border-radius:10px;background:var(--white);color:var(--muted);font-size:16px;line-height:1.6;cursor:pointer}
+#import-plan::file-selector-button{min-height:40px;margin:0 11px 0 0;padding:9px 12px;border:0;border-radius:7px;background:var(--lilac);color:var(--plum-dark);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+#import-plan::file-selector-button:hover{background:#ded1e7}
+.backup-file-field>.mini{margin-top:11px}
+.backup-card .backup-status{min-height:24px;margin:0;color:var(--plum-dark);font-size:14px;overflow-wrap:anywhere}
+body:has(dialog[open]){overflow:hidden}
+.restore-dialog{width:min(560px,calc(100vw - 32px));max-width:calc(100vw - 32px);max-height:calc(100dvh - 40px);overflow:auto;padding:29px}
+.restore-dialog .eyebrow{margin:0 0 13px;color:var(--plum);font-size:12px}
+.restore-dialog h2{font-size:25px;line-height:1.3}
+.restore-dialog p{font-size:16px;line-height:1.75}
+.restore-dialog #restore-summary{padding:16px;border:1px solid #ddcfe3;border-radius:12px;background:var(--lilac);color:var(--ink);white-space:pre-wrap;overflow-wrap:anywhere}
+.restore-dialog .actions{align-items:stretch;gap:12px;margin-top:23px}
+.restore-dialog .button{flex:1 1 190px;min-height:46px;font-size:14px}
+@media(max-width:980px){.backup-card{grid-template-columns:minmax(0,1fr);gap:23px}.backup-controls{max-width:600px}}
+@media(max-width:720px){.backup-card{gap:20px}.backup-controls>.button{align-self:stretch;width:100%}.backup-card h2{font-size:24px}.restore-dialog{padding:23px}.restore-dialog .actions{flex-direction:column;gap:12px}.restore-dialog .button{flex:0 1 auto;width:100%}.restore-dialog h2{font-size:24px}}
+@media print{.backup-controls,.backup-quick{display:none!important}.backup-card{display:block;background:white}.backup-card p,.backup-card .mini{font-size:10pt}}

@@ -7,7 +7,7 @@ const root = fileURLToPath(new URL('../',import.meta.url));
 const dist = path.join(root,'dist');
 await mkdir(dist,{recursive:true});
 await mkdir(path.join(dist,'assets'),{recursive:true});
-const assets = ['index.html','styles.css','content.js','engine.js','app.js','favicon.svg','plano.html','plano.css','plano-data.js','plano-engine.js','plano.js','assets/conversa-no-cafe.png','studio.html','studio.css','studio-data.js','studio-engine.js','studio.js','pwa.js','manifest.webmanifest'];
+const assets = ['index.html','styles.css','content.js','engine.js','app.js','favicon.svg','plano.html','plano.css','plano-data.js','plano-engine.js','plano.js','assets/conversa-no-cafe.png','studio.html','studio.css','studio-data.js','studio-engine.js','studio.js','pwa.js','manifest.webmanifest','conheca.html','comercial.css','robots.txt','sitemap.xml'];
 for (const file of assets) await copyFile(path.join(root,file),path.join(dist,file));
 for (const [file,size] of [['assets/icon-192.png',192],['assets/icon-512.png',512],['assets/icon-maskable.png',512]]) await writeFile(path.join(dist,file),iconPNG(size));
 let standalone = await readFile(path.join(root,'index.html'),'utf8');
@@ -25,8 +25,9 @@ standalone = standalone.replace('href="favicon.svg"','href="data:image/svg+xml,'
 const removePWA = html => html.replace(/\s*<link rel="(?:manifest|apple-touch-icon)"[^>]*>/g,'');
 standalone = removePWA(standalone);
 const site = 'https://namoro360x.aldenirmed.chatgpt.site/';
-standalone = standalone.replaceAll('href="plano.html"','href="'+site+'plano.html"');
-standalone = standalone.replaceAll('href="studio.html"','href="'+site+'studio.html"');
+const portableNames = {'index.html':'namoro360x.html','plano.html':'plano-relacionamento.html','studio.html':'studio-portatil.html'};
+const portableLinks = html => html.replace(/(href=["'])(index\.html|plano\.html|studio\.html)(?=[#?"'])/g,(_,prefix,file) => prefix+portableNames[file]);
+standalone = portableLinks(standalone);
 await writeFile(path.join(dist,'namoro360x.html'),standalone);
 let plan = await readFile(path.join(root,'plano.html'),'utf8');
 const planCss = await readFile(path.join(root,'plano.css'),'utf8');
@@ -41,10 +42,8 @@ const photo=await readFile(path.join(root,'assets/conversa-no-cafe.png'));
 plan=plan.replace('src="assets/conversa-no-cafe.png"','src="data:image/png;base64,'+photo.toString('base64')+'"');
 plan=plan.replace('href="favicon.svg"','href="data:image/svg+xml,'+encodeURIComponent(favicon)+'"');
 plan=removePWA(plan);
-// The standalone plan works offline. Links to the complementary guide require internet.
-plan=plan.replaceAll('href="index.html','href="'+site+'index.html');
-plan=plan.replaceAll('href="studio.html"','href="'+site+'studio.html"');
-plan=plan.replace('Explorar guia completo','Explorar guia completo (online)').replace('Montar um convite no guia','Montar um convite online');
+// All three portable tools are distributed side by side.
+plan=portableLinks(plan);
 plan=plan.replace('</body>',()=>planScripts.join('\n')+'\n</body>');
 await writeFile(path.join(dist,'plano-relacionamento.html'),plan);
 let studio=removePWA(await readFile(path.join(root,'studio.html'),'utf8'));
@@ -61,12 +60,12 @@ async function portableStudio() {
   studio=studio.replace(/\s*<section[^>]*id="aplicativo"[\s\S]*?<\/section>/,'');
   studio=studio.replace(/\s*<dialog[^>]*id="install-help"[\s\S]*?<\/dialog>/,'');
   studio=studio.replaceAll('href="#aplicativo"','href="'+site+'studio.html#aplicativo"');
-  studio=studio.replaceAll('href="index.html','href="'+site+'index.html').replaceAll('href="plano.html','href="'+site+'plano.html');
+  studio=portableLinks(studio);
   studio=studio.replace('</body>',() => js.join('\n')+'\n</body>');
   await writeFile(path.join(dist,'studio-portatil.html'),studio);
 }
 await portableStudio();
-const shell=[...assets,'assets/icon-192.png','assets/icon-512.png','assets/icon-maskable.png'];
+const shell=[...assets.filter(file => !['robots.txt','sitemap.xml'].includes(file)),'assets/icon-192.png','assets/icon-512.png','assets/icon-maskable.png'];
 const hash=createHash('sha256');
 for(const file of shell) hash.update(await readFile(path.join(dist,file)));
 const sw=await readFile(path.join(root,'sw.js'),'utf8');

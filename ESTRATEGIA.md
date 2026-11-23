@@ -1,14 +1,22 @@
 # Estratégia do Namoro360X
 
-Estratégia de evolução · **03/11/2026** · Aplicativo atualizado: versão 1.3.
+Estratégia de evolução · **23/11/2026** · Aplicativo atualizado: versão 1.5.
 
-## Atualização: transformar utilidade em produto
+## Atualização: continuar em outro aparelho com uma escolha explícita
+
+A prioridade da v1.5 é transferir manualmente o progresso do Meu plano sem criar uma conta. A pessoa baixa um JSON, leva o arquivo ao outro aparelho pelo meio que escolher e confere a prévia antes de restaurar. A escolha atual de salvamento do navegador de destino é preservada. Convites, rascunhos, informações sobre pessoas e preferências do guia ficam fora desse arquivo.
+
+O fluxo aparece em **Cuidados → Leve seu plano com você**, com **Baixar meu progresso** e **Restaurar um arquivo de progresso**. A restauração substitui o plano apenas depois de **Restaurar este progresso**. **Manter meu plano atual** cancela a operação. Arquivos inválidos não substituem o plano. O aplicativo não realiza o transporte do arquivo nem sincroniza escolhas automaticamente.
+
+A hospedagem pública autorizada foi reconfirmada em 23/11/2026. O histórico 1.4.1, de 17/11, preserva as melhorias de compartilhamento e as URLs canônicas. O checkout permanece indisponível; o estado atual da conta Stripe não foi consultado nesta atualização.
+
+## Utilidade e proposta comercial
 
 A v1.2 adicionou um plano pessoal flexível; a v1.3 adiciona o Estúdio360X, instalação por navegador, cópia offline por escolha e três roteiros do Kit360X em prévia gratuita. Isso mantém o foco em uma ação possível, conversa com contexto e respeito às decisões dos participantes.
 
-As três prioridades agora são: observar uso voluntário do aplicativo; validar se um pacote editorial acrescenta conveniência suficiente para uma compra avulsa; configurar e testar pagamento e entrega somente depois de definir o produto vendido. Começar sem assinatura reduz a obrigação de produzir conteúdo contínuo antes de conhecer a procura. R$ 29,90 é hipótese de preço, sem demanda comprovada. [MONETIZACAO.md](MONETIZACAO.md) registra os critérios para ativar a operação.
+As prioridades de continuidade são verificar o fluxo de transferência num iPhone físico; revisar o pacote editorial e seu fluxo comercial; e preparar um piloto por interesses somente quando houver organização real. Uma compra avulsa permanece como hipótese. R$ 29,90 não é um preço validado, e nenhum pagamento foi ativado nesta entrega. [MONETIZACAO.md](MONETIZACAO.md) registra os critérios para uma operação de venda e entrega reais.
 
-A tabela de versões abaixo preserva o planejamento original do guia. O piloto comunitário continua planejado, mesmo com a numeração do aplicativo avançando para 1.3; não há comunidade ativa ou participantes cadastrados.
+A numeração das versões acompanha o aplicativo individual. O piloto comunitário continua planejado e não deve ser confundido com a versão 1.2 do Meu plano, que já existe. Não há comunidade ativa ou participantes cadastrados.
 
 O Namoro360X ajuda adultos a encontrar assuntos, escolher atividades e preparar aproximações respeitosas. A proposta acolhe pessoas tímidas e pessoas com transtorno do déficit de atenção com hiperatividade (TDAH), respeitando também outros estilos de comunicação. Cada pessoa pode aproveitar uma sugestão, combinar ideias e deixar o restante para outro momento.
 
@@ -46,15 +54,19 @@ O primeiro encontro pode permitir conhecer pessoas em grupo, sem exposição obr
 
 **Como avaliar:** os participantes entendem a proposta, sabem como sair ou pedir apoio e relatam liberdade para escolher. A organização consegue acolher dúvidas e lidar com limites. Se faltam responsáveis, informação clara ou condições de acolhimento, o piloto precisa ser revisto antes de receber novas inscrições.
 
-## Mapa de versões
+## Mapa do produto e das próximas decisões
 
-A versão 1.1 está implementada como guia interativo. As versões 1.2 e 2 abaixo são planejamento; não há cadastros, mensagens entre usuários ou uma comunidade ativa.
+A versão atual é 1.5. O piloto e a comunidade abaixo são fases futuras, sem data ou compromisso de abertura.
 
-| Versão | Entrega proposta | Condição para avançar |
+| Versão ou fase | Escopo | Condição de continuidade |
 | --- | --- | --- |
 | **v1.1 · Guia aprimorado — implementado** | Três pontos de partida escolhíveis; ajuda curta para timidez/TDAH; modo foco; exemplos adaptáveis; distinção visível entre o que funciona agora e o que está planejado. | Observar o primeiro uso com pessoas voluntárias; verificar se encontram uma sugestão útil e entendem que podem escolher livremente. |
-| **v1.2 · Piloto manual** | Uma proposta concreta de atividade, responsável identificado, convite transparente, participação voluntária de adultos, regras de convivência e canal de acolhimento. O site pode fornecer o material do piloto sem fingir que existe inscrição automática. | Há organização disponível, concordância sobre dados e contatos, condições de acesso e capacidade real de responder a pedidos de ajuda. O retorno dos participantes orienta ajustes. |
-| **v2 · Cadastro e comunidade** | Contas reais, perfis voluntários, descoberta por interesses, pedidos de contato, visibilidade controlada, exclusão, bloqueio, denúncia e moderação operacional. | O piloto mostrou uma necessidade recorrente que o processo manual não atende bem. Há responsáveis e recursos para proteger dados, moderar a comunidade e manter o serviço. Autenticação e ferramentas de controle foram verificadas antes da abertura. |
+| **v1.2 · Meu plano — implementado** | Quatro etapas, doze passos e preferência local separada, com exemplos de reciprocidade e conversa. | Preservar escolhas livres e clareza de que os passos não pontuam o valor das pessoas. |
+| **v1.3 · Estúdio e Kit360X — implementados como prévia gratuita** | Nove situações comentadas, três roteiros, instalação em navegadores compatíveis e cópia offline opcional. | Verificar a experiência real por plataforma; não confundir a prévia com venda, tratamento ou acesso a participantes. |
+| **v1.4 e v1.4.1 · Apresentação e portabilidade — preservadas** | Página Conheça, metadados de compartilhamento, pacote portátil, imagem de prévia e sitemap com URLs canônicas. | Manter código e documentação consistentes; não apresentar um pacote de arquivos como confirmação de compra. |
+| **v1.5 · Transferência manual de progresso** | JSON do Meu plano, prévia, confirmação e preservação da adesão ao salvamento do destino; sem sincronização automática. | Verificar transferência e restauração num iPhone físico e manter claro o alcance do arquivo. |
+| **Piloto manual — planejado** | Atividade pública, responsável identificado, convite transparente, participação voluntária de adultos, regras de convivência e canal de acolhimento. | Há organização disponível, concordância sobre dados e contatos, condições de acesso e capacidade real de responder a pedidos de ajuda. O retorno dos participantes orienta ajustes. |
+| **Cadastro e comunidade — planejados** | Contas reais, perfis voluntários, descoberta por interesses, pedidos de contato, visibilidade controlada, exclusão, bloqueio, denúncia e moderação operacional. | O piloto mostrou uma necessidade recorrente que o processo manual não atende bem. Há responsáveis e recursos para proteger dados, moderar a comunidade e manter o serviço. Autenticação e ferramentas de controle foram verificadas antes da abertura. |
 
 O cadastro só deve entrar quando resolver uma dificuldade observada. O mesmo vale para mensagens internas, notificações e automações. Uma funcionalidade útil precisa ter quem cuide dela depois do lançamento.
 
@@ -68,7 +80,9 @@ Repetidos pedidos de ajuda para encontrar a mesma função indicam que a interfa
 
 - Preservar uma versão HTML portátil com caminhos relativos e sem dependências de execução. A consulta aos links de fontes continua exigindo internet.
 - Manter convites disponíveis como texto copiável e arquivos TXT/ICS. A pessoa escolhe como guardar ou compartilhar; nenhum conteúdo deve ser enviado automaticamente.
-- Explicar que preferências locais de um navegador não sincronizam automaticamente com outro dispositivo. Uma futura sincronização exige projeto próprio e escolha explícita do visitante.
+- Na v1.5, oferecer transferência manual do progresso do Meu plano por JSON. A pessoa baixa o arquivo mesmo sem ativar salvamento local; no destino, confere a prévia e decide se quer substituir o plano atual. A adesão atual ao salvamento é preservada.
+- Explicar que o JSON não inclui convites, rascunhos, pessoas ou preferências do guia, e que cancelar ou selecionar um arquivo inválido não substitui o progresso. O seletor lê o arquivo localmente, sem envio ao servidor do aplicativo.
+- Não chamar essa transferência de sincronização. Os arquivos são levados pela própria pessoa, e as cópias baixadas continuam existindo depois de limpar os dados do site. A transferência num iPhone físico permanece pendente de verificação.
 - Verificar textos, botões e formulários em tela estreita e com ampliação. As funções principais precisam funcionar por toque e teclado, sem depender de passar o mouse. Incluir leitura com tecnologias assistivas na revisão de acessibilidade.
 - Publicar apenas código e conteúdo geral no repositório. Rascunhos, convites preenchidos, inscrições e relatos de participantes ficam fora do Git público.
 
@@ -80,4 +94,4 @@ O projeto deve preservar relações de cuidado, avaliação e supervisão; aceit
 
 ## Próxima peça de desenvolvimento
 
-Observar a primeira experiência da v1.3: escolher uma situação, obter uma sugestão utilizável e levar um roteiro consigo. Validar utilidade e disposição voluntária para pagar por um pacote editado. O piloto manual poderá ser preparado quando houver um organizador e uma atividade real para oferecer.
+Verificar a continuidade em iPhone físico: baixar o progresso no Mac, levá-lo ao outro aparelho, conferir a prévia, cancelar sem alterações e restaurar após confirmação. Conferir também se a opção de salvamento do destino permaneceu como estava. Depois, usar o retorno voluntário para ajustar o fluxo antes de acrescentar contas ou sincronização.

@@ -1,6 +1,7 @@
 node_modules/
 dist/
 artifacts/
+namoro360x-progresso*.json
 .DS_Store
 .env
 .env.*

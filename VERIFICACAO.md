@@ -1,3 +1,19 @@
+# Verificação da versão 1.5 — 23/11/2026
+
+- Base: fonte hospedada 1.4.1, commit `582e654`, aberta antes de editar. A audiência pública foi confirmada e preservada. O GitHub tinha somente a versão 1.3 e uma atualização de README; esta entrega reconcilia o código com a hospedagem atual.
+- `npm run check` e `npm run build`: aprovados. `npm test`: 86 testes aprovados, incluindo 18 novos de backup do plano e a verificação de distribuição portátil da v1.4.
+- Backup: exportação sem adesão ao salvamento, dados mínimos, todos os passos conhecidos, pausa, deduplicação, formato/versão/data/tipos/limites, campos extras e ausência de mutação cobertos pelos testes. O arquivo não inclui a opção de salvamento do navegador ou campos de perfil.
+- Navegador real: download JSON confirmado. Arquivo de exemplo com dois passos e pausa mostrou prévia com data e etapa; cancelar preservou um passo, confirmar restaurou dois, com salvamento desativado. Um segundo teste restaurou o JSON baixado com salvamento já ativado e manteve um passo e a adesão após recarregar.
+- Arquivo inválido e arquivo acima de 10.000 bytes foram recusados sem substituir o progresso. Escape fechou a prévia sem alterar as marcações. Os testes de interface usaram dados genéricos, sem informações de participantes.
+- Layout conferido no navegador em larguras de 390 e 320 px, sem rolagem horizontal inesperada. Foco inicial do diálogo em “Manter meu plano atual”. O HTML portátil mantém os recursos de backup e os caminhos relativos entre as três ferramentas.
+- O pacote Kit360X lê a versão do `package.json` e inclui as instruções para transferir progresso. Backups com o nome gerado pelo app são ignorados pelo Git; artefatos e testes de navegador permanecem fora do repositório.
+
+**Limites:** transferência em iPhone/Android físicos, instalação e uso offline nesses dispositivos, leitores de tela e impressão/PDF continuam sem homologação nesta rodada. Não foi consultada a situação atual da conta Stripe; checkout continua indisponível. Não houve envio de mensagens ou divulgação em redes sociais nesta atualização.
+
+Os registros abaixo são históricos; suas verificações e datas são preservadas.
+
+---
+
 # Verificação da versão 1.3 — 03/11/2026
 
 - `npm run check`: integridade do guia, plano, Estúdio e manifesto aprovada.
