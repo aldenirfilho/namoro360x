@@ -1,6 +1,8 @@
-# Plano de relacionamento sério — 1.2
+# Plano de relacionamento sério — 1.5.1
 
 Entrada: `plano.html`, conectada ao menu, botão principal e rodapé do guia `index.html`.
+
+Na tela Hoje, o próximo passo prioriza a etapa selecionada e depois percorre as etapas seguintes, voltando ao começo quando necessário. O limite escolhido é respeitado: 5 minutos ou até 15 minutos. Se não houver tarefa curta pendente, o painel distingue essa situação da conclusão de todo o plano e permite ampliar o tempo explicitamente. A última marcação feita pelo painel pode ser desfeita na sessão atual.
 
 ## Arquivos
 
@@ -17,7 +19,7 @@ Não há autenticação no código estático, backend, rastreadores, análise de
 
 ## Versão portátil
 
-`npm run build` produz `dist/plano-relacionamento.html`, com CSS, scripts e imagem incorporados. As cinco áreas e os controles funcionam sem rede. Referências e o planejador complementar são links online identificados. A persistência em `file://` depende do navegador; copiar tem alternativa manual.
+`npm run build` produz `dist/plano-relacionamento.html`, com CSS, scripts e imagem incorporados. As cinco áreas e os controles funcionam sem rede. Guia, plano e Estúdio portáteis devem permanecer juntos na mesma pasta para a navegação entre ferramentas. Referências externas exigem internet. A persistência em `file://` depende do navegador; copiar tem alternativa manual. O progresso também pode ser exportado e restaurado manualmente pelo formato JSON da versão 1.5.
 
 ## Histórico e recuperação
 

@@ -37,3 +37,21 @@ test('marking is reversible, idempotent and rejects unknown tasks',()=>{
   assert.deepEqual(state.done,['valores']);assert.equal(engine.setDone(state,'private-person',true,stages),state);
   assert.deepEqual(engine.setDone(state,'valores',false,stages).done,[]);
 });
+
+test('the selected stage determines the next suggestion, including restored progress',()=>{
+  const state=engine.restore(JSON.stringify({...engine.empty(),remember:true,stage:'aproximar',pace:'aberto'}),stages);
+  assert.equal(engine.nextTask(state,stages).id,'escuta');
+  assert.equal(engine.nextTask({...state,pace:'leve'},stages).id,'reciprocidade');
+});
+test('when the selected stage is complete, suggestions continue forward and wrap back',()=>{
+  const state={...engine.empty(),stage:'aproximar',pace:'aberto',done:stages[2].tasks.map(t=>t.id)};
+  assert.equal(engine.nextTask(state,stages).stage,'construir');
+  state.done.push(...stages[3].tasks.map(t=>t.id));
+  assert.equal(engine.nextTask(state,stages).id,'valores');
+});
+test('five-minute mode does not silently substitute a longer task',()=>{
+  const state={...engine.empty(),done:stages.flatMap(s=>s.tasks).filter(t=>t.minutes<=5).map(t=>t.id)};
+  assert.equal(engine.nextTask(state,stages),null);
+  assert.ok(state.done.length<stages.flatMap(s=>s.tasks).length);
+  assert.equal(engine.nextTask({...state,pace:'aberto'},stages).id,'perfil');
+});

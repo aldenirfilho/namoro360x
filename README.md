@@ -4,7 +4,15 @@
 
 Site HTML educativo e interativo para adultos de 18 anos ou mais construírem vínculos saudáveis. Acolhe diferentes estilos de comunicação, com atenção à timidez e ao transtorno do déficit de atenção com hiperatividade (TDAH).
 
-## Versão 1.5 — 23/11/2026
+## Versão 1.5.1 — 23/11/2026
+
+A tela **Hoje** começa com a próxima ação e dá prioridade à etapa que você escolheu. **Ver este passo na etapa** abre o ponto correspondente do plano. Marcar um passo pelo painel oferece **Desfazer última marcação**, disponível nesta aba até outra conclusão ou restauração.
+
+O ritmo de **5 minutos** sugere somente tarefas com essa duração. Quando elas terminam, o painel explica que ainda há passos mais longos e permite escolher **até 15 minutos**, sem marcar tarefas como concluídas automaticamente. A pausa continua disponível. Textos e controles do plano ficaram maiores, inclusive na navegação móvel.
+
+O formato do progresso salvo e dos arquivos de transferência permanece compatível com a versão 1.5. Consulte [VERIFICACAO.md](VERIFICACAO.md) para os testes desta atualização.
+
+### Transferência de progresso — versão 1.5
 
 O **Meu plano** permite baixar um arquivo JSON com os passos concluídos, a etapa aberta e o ritmo escolhido e restaurar esse progresso manualmente em outro navegador. Não é necessário ativar o salvamento local para baixar o arquivo. A restauração apresenta uma prévia e pede confirmação antes de substituir o plano atual; preserva a opção de salvamento deste navegador.
 

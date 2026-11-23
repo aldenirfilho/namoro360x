@@ -38,3 +38,35 @@ body:has(dialog[open]){overflow:hidden}
 @media(max-width:980px){.backup-card{grid-template-columns:minmax(0,1fr);gap:23px}.backup-controls{max-width:600px}}
 @media(max-width:720px){.backup-card{gap:20px}.backup-controls>.button{align-self:stretch;width:100%}.backup-card h2{font-size:24px}.restore-dialog{padding:23px}.restore-dialog .actions{flex-direction:column;gap:12px}.restore-dialog .button{flex:0 1 auto;width:100%}.restore-dialog h2{font-size:24px}}
 @media print{.backup-controls,.backup-quick{display:none!important}.backup-card{display:block;background:white}.backup-card p,.backup-card .mini{font-size:10pt}}
+
+/* v1.5.1 · ação primeiro, leitura confortável e retomada da etapa escolhida */
+.nav-short{display:none}
+.next-stage{margin:0 0 12px;color:var(--plum)!important;font-weight:600}
+.undo-step{display:inline-flex;align-items:center;min-height:44px;margin-top:14px;padding:6px 0;border:0;background:transparent;text-align:left}
+.dashboard-grid+.hero-card{margin-top:26px}
+.card,.card>div,.stage-banner>div,.task-row>span{min-width:0}
+@media screen{
+  .card p,.hero-text p,.intro,.detail-body li,.spaced-list,.principle p,.signal-item p,.soft-note p,.gentle-note{font-size:1rem}
+  .task-row strong{font-size:1rem}
+  .task-row small,.save-choice small,.task-row .task-time,.field-label,.save-choice strong,.text-link,.segmented button,.stage-tabs button,.message-options button,.signal-item h3,.privacy-link{font-size:.875rem}
+  .button,summary,.save-choice{min-height:44px}
+  .card .mini,.mini,.hero-text small,.hero-card figcaption,.app-footer,.topbar,.progress-heading,.tag,.soft-pill,.eyebrow,.sidebar-version,.nav-label{font-size:.8125rem}
+  .editor-note{font-size:.875rem!important}
+  .hero-text small{max-width:none}
+  select{appearance:none;font-size:1rem;padding-right:38px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%23684f70' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+}
+@media screen and (max-width:720px){
+  .app-nav .nav-full{display:none}.app-nav .nav-short{display:block}
+  .app-nav a{font-size:.875rem;white-space:normal;text-align:center;padding-inline:0;min-width:0;line-height:1.5}
+  .app-nav a>span{max-width:100%;overflow-wrap:normal}
+  .topbar{height:auto;min-height:65px;flex-wrap:wrap;padding-block:12px;gap:6px}
+  .topbar p{font-size:0}.topbar p>strong,.mobile-brand{font-size:.875rem!important}.privacy-link{font-size:.8125rem}
+  main{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
+  .task-row{display:grid;grid-template-columns:20px minmax(0,1fr);column-gap:12px;row-gap:5px}
+  .task-row .task-time{display:block;grid-column:2;margin:0}
+  .hero-card figure{height:180px}
+  .actions .text-link,.undo-step{min-height:44px;display:flex;align-items:center}
+  .stage-tabs button,.message-options button{line-height:1.5;overflow-wrap:anywhere}
+  .hero-text h2{font-size:2rem}.hero-text{padding:23px}
+}
+@media print{.undo-step{display:none!important}}

@@ -1,3 +1,15 @@
+# Verificação da versão 1.5.1 — 23/11/2026
+
+- Base: versão 1.5 publicada, commit `434eefb`, obtida pelo helper Sites antes de editar; acesso público confirmado. O progresso antigo mantém a mesma chave e estrutura.
+- `npm run check`, `npm test` e `npm run build` aprovados: 89 testes, incluindo regressões para etapa escolhida, continuação circular das etapas e limite real de 5 minutos.
+- Chromium: cinco áreas exercitadas em 1440, 768, 390 e 320 px, sem rolagem horizontal inesperada. Capturas de desktop e celular inspecionadas; corpo principal com pelo menos 16 px.
+- Fluxos conferidos: ação acima da introdução, marcar/desfazer, retomada da etapa correspondente, esgotamento apenas de tarefas curtas, ampliação explícita para até 15 minutos, pausa e conclusão integral.
+- Persistência v1 após recarga e transferência JSON para um segundo contexto de navegador conferidas. A importação mantém o salvamento desativado quando essa é a preferência de destino e não oferece desfazer uma ação anterior à restauração.
+- HTML portátil: nova marcação e desfazer funcionaram com rede desativada, sem requisições HTTP. Nenhum erro JavaScript nas telas testadas.
+- Capturas e resultado de QA locais em `artifacts/v1_5_1/`, ignorados no Git. Instalação e uso em aparelhos físicos e leitores de tela não foram homologados nesta rodada.
+
+---
+
 # Verificação da versão 1.5 — 23/11/2026
 
 - Base: fonte hospedada 1.4.1, commit `582e654`, aberta antes de editar. A audiência pública foi confirmada e preservada. O GitHub tinha somente a versão 1.3 e uma atualização de README; esta entrega reconcilia o código com a hospedagem atual.
