@@ -3,7 +3,7 @@
   const data=window.N360_PLAN_DATA,engine=window.N360_PLAN;
   const $=id=>document.getElementById(id);
   const labels={hoje:'Hoje',plano:'Meu plano',sinais:'Reciprocidade',conversas:'Conversas',cuidado:'Cuidados'};
-  let state=engine.empty(),selectedMessage=data.messages[0],toastTimer;
+  let state=engine.empty(),selectedMessage=data.messages[0],toastTimer,pendingBackup=null,readTicket=0;
   try{state=engine.restore(localStorage.getItem(engine.KEY),data.stages);}catch{$('storage-status').textContent='Este navegador não permite salvar. Você pode usar o plano nesta aba.';}
   function element(tag,className,text){const node=document.createElement(tag);if(className)node.className=className;if(text!==undefined)node.textContent=text;return node;}
   function toast(message){clearTimeout(toastTimer);$('plan-toast').textContent=message;$('plan-toast').hidden=false;toastTimer=setTimeout(()=>{$('plan-toast').hidden=true;},4500);}
@@ -55,9 +55,43 @@
     try{localStorage.removeItem(engine.KEY);$('storage-status').textContent='Cópia salva removida. As escolhas atuais ficam somente nesta aba.';}
     catch{$('storage-status').textContent='Não foi possível confirmar a remoção. Use as configurações do navegador para apagar os dados deste site.';}
   });
+  function clearPendingBackup(){pendingBackup=null;readTicket++;$('restore-dialog').close();$('import-plan').value='';}
+  $('export-plan').addEventListener('click',()=>{
+    try{
+      const text=engine.exportBackup(state,data.stages),url=URL.createObjectURL(new Blob([text],{type:'application/json;charset=utf-8'}));
+      const link=element('a');link.href=url;link.download='namoro360x-progresso.json';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+      $('backup-status').textContent='Arquivo preparado. Confira Downloads e guarde uma cópia em um lugar seu. Ele contém somente passos, etapa e ritmo.';
+    }catch{$('backup-status').textContent='Não foi possível preparar o arquivo. Seu progresso continua nesta aba.';}
+  });
+  $('import-plan').addEventListener('change',async()=>{
+    const file=$('import-plan').files?.[0],ticket=++readTicket;
+    pendingBackup=null;$('import-plan').value='';if(!file)return;
+    if(file.size>10000){$('backup-status').textContent='O arquivo excede 10 KB. Escolha um progresso exportado pelo Namoro360X. Seu plano atual foi mantido.';return;}
+    $('backup-status').textContent='Lendo o arquivo neste aparelho…';
+    try{
+      const text=await file.text();if(ticket!==readTicket)return;
+      const backup=engine.importBackup(text,data.stages),stage=data.stages.find(item=>item.id===backup.state.stage);
+      pendingBackup=backup;
+      const pace={leve:'5 minutos',aberto:'15 minutos',pausa:'Pausa'}[backup.state.pace];
+      const created=new Intl.DateTimeFormat('pt-BR',{dateStyle:'short',timeStyle:'short'}).format(new Date(backup.createdAt));
+      $('restore-summary').textContent='Arquivo criado em '+created+'. '+backup.state.done.length+' de '+data.stages.flatMap(item=>item.tasks).length+' passos marcados. Etapa: '+stage.title+'. Ritmo: '+pace+'.';
+      $('backup-status').textContent='Arquivo conferido. Seu plano só muda se você confirmar a restauração.';
+      $('restore-dialog').showModal();$('cancel-restore').focus();
+    }catch(error){if(ticket===readTicket){pendingBackup=null;$('backup-status').textContent=error.message||'Não foi possível ler esse arquivo. Seu plano atual foi mantido.';}}
+  });
+  $('cancel-restore').addEventListener('click',()=>{clearPendingBackup();$('backup-status').textContent='Restauração cancelada. Seu plano atual foi mantido.';});
+  $('restore-dialog').addEventListener('cancel',()=>{clearPendingBackup();$('backup-status').textContent='Restauração cancelada. Seu plano atual foi mantido.';});
+  $('confirm-restore').addEventListener('click',()=>{
+    if(!pendingBackup)return;
+    const remember=state.remember;
+    state={...pendingBackup.state,remember};clearPendingBackup();save();renderStage();renderProgress();
+    $('backup-status').textContent=state.remember?'Progresso restaurado e salvo neste navegador.':'Progresso restaurado nesta aba. Para conservar após fechar, escolha guardar seus passos ou baixe outra cópia.';
+    toast('Seu plano foi restaurado. Retome no seu ritmo.');
+  });
   $('reset-plan').addEventListener('click',()=>{$('reset-dialog').showModal();$('cancel-reset').focus();});
   $('cancel-reset').addEventListener('click',()=>{$('reset-dialog').close();});
   $('confirm-reset').addEventListener('click',()=>{
+    clearPendingBackup();$('backup-status').textContent='';
     let removed=true;try{localStorage.removeItem(engine.KEY);}catch{removed=false;}
     state=engine.empty();renderStage();renderProgress();$('storage-status').textContent=removed?'Passos reiniciados. O salvamento está desativado.':'Passos reiniciados nesta aba. Não foi possível confirmar a remoção salva; apague os dados deste site nas configurações do navegador.';$('reset-dialog').close();toast('Você pode recomeçar no seu tempo.');
   });

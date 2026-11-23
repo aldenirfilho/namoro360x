@@ -21,5 +21,25 @@
     if(!stages.some(stage=>stage.tasks.some(task=>task.id===id)))return state;
     return {...state,done:checked?[...new Set([...state.done,id])]:state.done.filter(item=>item!==id)};
   }
-  return {KEY,empty,normalize,restore,nextTask,setDone};
+  const BACKUP_FORMAT='namoro360x-plan-backup';
+  const keysExactly=(value,keys)=>value&&typeof value==='object'&&!Array.isArray(value)&&keys.every(key=>Object.hasOwn(value,key))&&Object.keys(value).every(key=>keys.includes(key));
+  function exportBackup(state,stages,now=new Date()){
+    if(!(now instanceof Date)||!Number.isFinite(now.getTime()))throw new Error('Não foi possível preparar a data do arquivo.');
+    const clean=normalize({...state,remember:true},stages);
+    return JSON.stringify({format:BACKUP_FORMAT,version:1,createdAt:now.toISOString(),plan:{done:clean.done,stage:clean.stage,pace:clean.pace}},null,2)+'\n';
+  }
+  function importBackup(raw,stages){
+    const error=()=>new Error('Este arquivo não é um progresso compatível do Namoro360X. Seu plano atual foi mantido.');
+    if(typeof raw!=='string'||raw.length>10000)throw error();
+    let data;try{data=JSON.parse(raw);}catch{throw error();}
+    if(!keysExactly(data,['format','version','createdAt','plan'])||data.format!==BACKUP_FORMAT||data.version!==1)throw error();
+    if(typeof data.createdAt!=='string'||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(data.createdAt))throw error();
+    const date=new Date(data.createdAt);
+    if(!Number.isFinite(date.getTime())||date.toISOString()!==data.createdAt)throw error();
+    const plan=data.plan, valid=stages.flatMap(stage=>stage.tasks.map(task=>task.id));
+    if(!keysExactly(plan,['done','stage','pace'])||!Array.isArray(plan.done)||plan.done.length>100||!plan.done.every(id=>typeof id==='string'&&valid.includes(id)))throw error();
+    if(!stages.some(stage=>stage.id===plan.stage)||!['leve','aberto','pausa'].includes(plan.pace))throw error();
+    return {state:{version:1,done:[...new Set(plan.done)],stage:plan.stage,pace:plan.pace,remember:false},createdAt:data.createdAt};
+  }
+  return {KEY,empty,normalize,restore,nextTask,setDone,exportBackup,importBackup};
 });
